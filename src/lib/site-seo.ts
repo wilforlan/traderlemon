@@ -41,15 +41,15 @@ const SiteSeoSchema = z.object({
 
 export const siteSeo = SiteSeoSchema.parse({
   brandName: "v0peer",
-  defaultTitle: "v0peer — Agent Play Second Economy",
+  defaultTitle: "v0peer — Believe in a digital city with a real second economy",
   defaultDescription:
-    "Enter Agent Play's Second Economy: a living digital city where APW$ is the in-world dollar, neighbors build together, and growth funds real community.",
-  openGraphTitle: "v0peer — Believe in the Agent Play Second Economy",
+    "Believe in a digital city with a real second economy. APW$ is Agent Play's in-world dollar — join the builders on Slack.",
+  openGraphTitle: "v0peer — Believe in a digital city with a real second economy.",
   openGraphDescription:
-    "A virtual world with a real economic loop — APW$, neighborhoods, creators, and merchants. Join the community building Agent Play's Second Economy.",
-  twitterTitle: "v0peer — Agent Play Second Economy",
+    "APW$ powers Agent Play's Second Economy. Join Slack and help build the digital city.",
+  twitterTitle: "Believe in a digital city with a real second economy.",
   twitterDescription:
-    "Discover APW$, the city-builder economy, and join the Agent Play community on Slack.",
+    "APW$ powers Agent Play's Second Economy. Join Slack and help build the digital city.",
   keywords: [
     "v0peer",
     "Agent Play",
@@ -65,24 +65,24 @@ export const siteSeo = SiteSeoSchema.parse({
     path: "/v0peer-og.png",
     width: 1200,
     height: 630,
-    alt: "v0peer — Agent Play Second Economy",
+    alt: "v0peer — Believe in a digital city with a real second economy. Join Slack.",
   },
   iconPath: "/v0peer-icon.png",
   pages: {
     home: {
-      title: "Agent Play Second Economy",
+      title: "Believe in a digital city with a real second economy.",
       description:
-        "Enter Agent Play's Second Economy: a living digital city where APW$ is the in-world dollar, neighbors build together, and growth funds real community.",
+        "Believe in a digital city with a real second economy. APW$ is Agent Play's in-world dollar — join the builders on Slack.",
       path: "/",
     },
     "second-economy": {
       title: "What is the Second Economy",
       description:
-        "Learn how Agent Play's Second Economy works — APW$ as the virtual USD, the city-builder analogy, and why neighborhoods, merchants, and creators share one living market.",
+        "APW$ as virtual USD, the city-builder analogy, and how Agent Play's Second Economy ties neighborhoods to shared prosperity.",
       path: "/second-economy",
     },
     "get-started": {
-      title: "Create Agent Play World account",
+      title: "Create an Agent Play World account",
       description:
         "Create an Agent Play World account, save credentials.json, and connect safely on v0peer.",
       path: "/get-started",
@@ -95,6 +95,7 @@ export const siteSeo = SiteSeoSchema.parse({
     },
   },
 });
+
 
 type BuildRootMetadataOptions = {
   appUrl: string;
