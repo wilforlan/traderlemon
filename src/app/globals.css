@@ -1,0 +1,38 @@
+@import "tailwindcss";
+
+:root {
+  --bg: #f3faf5;
+  --surface: #ffffff;
+  --mint: #e4f3ea;
+  --green: #1b7a4e;
+  --green-bright: #2d9b6a;
+  --gold: #e8c547;
+  --gold-deep: #a67c00;
+  --ink: #143528;
+  --ink-muted: #5f7366;
+  --line: #cfe3d6;
+  --background: var(--bg);
+  --foreground: var(--ink);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-body);
+  --font-display: var(--font-display);
+}
+
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-body), ui-sans-serif, system-ui, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+::selection {
+  background: color-mix(in oklab, var(--gold) 55%, white);
+  color: var(--ink);
+}
