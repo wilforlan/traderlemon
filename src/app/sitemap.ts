@@ -10,20 +10,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
     {
       url: `${appUrl}${siteSeo.pages.home.path}`,
       lastModified,
-      changeFrequency: "daily",
+      changeFrequency: "weekly",
       priority: 1,
     },
     {
-      url: `${appUrl}${siteSeo.pages["get-started"].path}`,
+      url: `${appUrl}${siteSeo.pages["second-economy"].path}`,
       lastModified,
       changeFrequency: "weekly",
-      priority: 0.8,
-    },
-    {
-      url: `${appUrl}${siteSeo.pages.merchant.path}`,
-      lastModified,
-      changeFrequency: "weekly",
-      priority: 0.8,
+      priority: 0.9,
     },
   ];
 }

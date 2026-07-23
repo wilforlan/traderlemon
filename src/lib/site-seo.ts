@@ -1,7 +1,12 @@
 import type { Metadata } from "next";
 import { z } from "zod";
 
-export const SitePageKeySchema = z.enum(["home", "get-started", "merchant"]);
+export const SitePageKeySchema = z.enum([
+  "home",
+  "second-economy",
+  "get-started",
+  "merchant",
+]);
 export type SitePageKey = z.infer<typeof SitePageKeySchema>;
 
 const SitePageSeoSchema = z.object({
@@ -28,6 +33,7 @@ const SiteSeoSchema = z.object({
   iconPath: z.literal("/v0peer-icon.png"),
   pages: z.object({
     home: SitePageSeoSchema,
+    "second-economy": SitePageSeoSchema,
     "get-started": SitePageSeoSchema,
     merchant: SitePageSeoSchema,
   }),
@@ -35,50 +41,56 @@ const SiteSeoSchema = z.object({
 
 export const siteSeo = SiteSeoSchema.parse({
   brandName: "v0peer",
-  defaultTitle: "v0peer — Peer APU desk for Agent Play",
+  defaultTitle: "v0peer — Agent Play Second Economy",
   defaultDescription:
-    "Convert SOL to APU on v0peer, the peer trading desk for Agent Play. Connect a Solana wallet, settle through Econext rates, and circulate growth into community.",
-  openGraphTitle: "v0peer — Peer APU desk for Agent Play",
+    "Enter Agent Play's Second Economy: a living digital city where APW$ is the in-world dollar, neighbors build together, and growth funds real community.",
+  openGraphTitle: "v0peer — Believe in the Agent Play Second Economy",
   openGraphDescription:
-    "Buy and sell Agent Play APU peer-to-peer with WalletConnect. SOL↔APU conversion on a calm desk built for the second economy.",
-  twitterTitle: "v0peer — Trade APU with SOL",
+    "A virtual world with a real economic loop — APW$, neighborhoods, creators, and merchants. Join the community building Agent Play's Second Economy.",
+  twitterTitle: "v0peer — Agent Play Second Economy",
   twitterDescription:
-    "The Agent Play peer APU desk: convert SOL, connect credentials, and move liquidity through merchants and neighborhoods.",
+    "Discover APW$, the city-builder economy, and join the Agent Play community on Slack.",
   keywords: [
     "v0peer",
-    "APU",
     "Agent Play",
-    "Solana",
-    "SOL to APU",
-    "WalletConnect",
-    "second economy",
+    "Second Economy",
+    "APW$",
+    "virtual world",
+    "digital city",
+    "APU",
     "Econext",
-    "peer trading",
+    "community",
   ],
   ogImage: {
     path: "/v0peer-og.png",
     width: 1200,
     height: 630,
-    alt: "v0peer — Peer APU desk for Agent Play",
+    alt: "v0peer — Agent Play Second Economy",
   },
   iconPath: "/v0peer-icon.png",
   pages: {
     home: {
-      title: "Trade APU",
+      title: "Agent Play Second Economy",
       description:
-        "Convert SOL to APU on v0peer, the peer trading desk for Agent Play. Connect a Solana wallet, settle through Econext rates, and circulate growth into community.",
+        "Enter Agent Play's Second Economy: a living digital city where APW$ is the in-world dollar, neighbors build together, and growth funds real community.",
       path: "/",
+    },
+    "second-economy": {
+      title: "What is the Second Economy",
+      description:
+        "Learn how Agent Play's Second Economy works — APW$ as the virtual USD, the city-builder analogy, and why neighborhoods, merchants, and creators share one living market.",
+      path: "/second-economy",
     },
     "get-started": {
       title: "Create Agent Play World account",
       description:
-        "Create an Agent Play World account, save credentials.json, and connect safely on v0peer. No password reset — the file is your key to the peer APU desk.",
+        "Create an Agent Play World account, save credentials.json, and connect safely on v0peer.",
       path: "/get-started",
     },
     merchant: {
       title: "Become an APU merchant",
       description:
-        "Accept APU for goods and services on Agent Play's second economy. List as a merchant on v0peer and help circulate growth into local social development.",
+        "Accept APU for goods and services on Agent Play's second economy.",
       path: "/merchant",
     },
   },
@@ -113,7 +125,7 @@ export const buildRootMetadata = (
     authors: [{ name: "v0peer" }],
     creator: "v0peer",
     publisher: "v0peer",
-    category: "finance",
+    category: "games",
     alternates: {
       canonical: "/",
     },

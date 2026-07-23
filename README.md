@@ -1,17 +1,12 @@
 # v0peer
 
-Next.js peer trading desk for Agent Play **APU**. Users connect any Solana wallet through **WalletConnect** (Reown AppKit) and authenticate by uploading their Agent Play World `credentials.json`. All banking and conversion APIs live in **Econext** — this app never talks to Redis or a database.
+Public site for the **Agent Play Second Economy** — vision, APW$, and community. The primary call to action is joining the Slack community; **Earn** links to [Econext](https://econext.llc).
 
 ## Stack
 
 - Next.js App Router
-- Econext HTTP APIs (`/api/market/rates`, `/api/auth/connect`, …)
-- Recharts desk analytics
-- Light green + gold fintech theme
-
-## SEO
-
-Document titles, Open Graph / Twitter cards, icons, `robots.txt`, and `sitemap.xml` are driven by `src/lib/site-seo.ts`. Set `NEXT_PUBLIC_APP_URL` to the canonical production origin so share URLs and the sitemap resolve correctly. Assets live at `/v0peer-og.png` and `/v0peer-icon.png`.
+- Calm banking-style marketing UI
+- SEO via `src/lib/site-seo.ts`
 
 ## Setup
 
@@ -21,26 +16,24 @@ npm install
 npm run dev
 ```
 
-Runs on [http://localhost:3002](http://localhost:3002) by default (script). Start Econext on port **3001** so market rates and auth proxy succeed.
+Set:
+
+- `NEXT_PUBLIC_APP_URL` — canonical site origin
+- `NEXT_PUBLIC_SLACK_COMMUNITY_URL` — Slack invite link (enables Join Slack)
+- `NEXT_PUBLIC_AGENT_PLAY_URL` — Agent Play World entry URL
+
+## Routes
+
+| Path | Purpose |
+|------|---------|
+| `/` | Second Economy landing / belief page |
+| `/second-economy` | Deep dive: APW$, city-builder analogy |
+| Earn (nav) | External → https://econext.llc |
 
 ## Scripts
 
 | Script | Purpose |
 |--------|---------|
 | `npm run dev` | Dev server on 3002 |
-| `npm test` | Vitest (conversion + credentials) |
+| `npm test` | Vitest |
 | `npm run build` | Production build |
-
-## WalletConnect
-
-Solana wallets connect only through Reown AppKit / WalletConnect (no Phantom-injected provider).
-
-1. Create a project at [dashboard.reown.com](https://dashboard.reown.com).
-2. Set `NEXT_PUBLIC_WALLETCONNECT_PROJECT_ID` in `.env.local`.
-3. Set `NEXT_PUBLIC_APP_URL` to the origin users will open (required for WalletConnect metadata).
-
-## Auth
-
-1. Create an Agent Play World account and save `credentials.json`.
-2. On v0peer, open **Get started** or click **Create Agent Play World Account**.
-3. Upload the file on the account panel — v0peer proxies to Econext `POST /api/auth/connect`.
