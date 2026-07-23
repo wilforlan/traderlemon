@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Fraunces, Manrope } from "next/font/google";
 
+import { AppKitProvider } from "@/components/appkit-provider";
 import { buildRootMetadata, resolveAppUrl } from "@/lib/site-seo";
 
 import "./globals.css";
@@ -27,7 +28,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${display.variable} ${body.variable} antialiased`}>
-        {children}
+        <AppKitProvider>{children}</AppKitProvider>
       </body>
     </html>
   );

@@ -15,17 +15,17 @@ const steps = [
   },
   {
     title: "Save credentials.json",
-    body: "When prompted, download your credentials file. It binds serverUrl, nodeId, and your passphrase — the only key Traderlemon and Econext accept for session auth.",
+    body: "When prompted, download your credentials file. It binds serverUrl, nodeId, and your passphrase — the only key v0peer and Econext accept for session auth.",
     icon: KeyRound,
   },
   {
     title: "Treat the file like a private key",
-    body: "Anyone with credentials.json can act as you on banking and trade rails. Store it offline or in a password manager. Never paste it into chats, tickets, or shared drives.",
+    body: "Anyone with credentials.json can act as you on banking and peer trade rails. Store it offline or in a password manager. Never paste it into chats, tickets, or shared drives.",
     icon: EyeOff,
   },
   {
     title: "Upload only on trusted desks",
-    body: "On Traderlemon, use Create Agent Play World Account → return here → upload credentials on the Connect panel. Econext verifies the file; Traderlemon never stores it in a database.",
+    body: "On v0peer, use Create Agent Play World Account → return here → upload credentials on the account panel. Econext verifies the file; v0peer never stores it in a database.",
     icon: ShieldCheck,
   },
 ] as const;
@@ -47,7 +47,7 @@ export default function GetStartedPage() {
             Create your Agent Play World account
           </h1>
           <p className="mt-4 text-base leading-relaxed text-[color:var(--ink-muted)]">
-            Authentication on Traderlemon is credentials-file based. There is no password
+            Authentication on v0peer is credentials-file based. There is no password
             reset email and no social login — the file is the account. Understanding how
             to create it and keep it safe is the whole onboarding.
           </p>
@@ -85,10 +85,10 @@ export default function GetStartedPage() {
             Why the credentials file matters
           </h2>
           <ul className="mt-3 list-disc space-y-2 pl-5 text-sm leading-relaxed text-[color:var(--ink-muted)]">
-            <li>It proves control of your node without Traderlemon holding passwords.</li>
+            <li>It proves control of your node without v0peer holding passwords.</li>
             <li>Loss of the file can lock you out of banking and trade confirmations.</li>
             <li>Sharing it is equivalent to handing someone your wallet keys.</li>
-            <li>Only upload on pages you trust — Traderlemon proxies auth to Econext APIs.</li>
+            <li>Only upload on pages you trust — v0peer proxies auth to Econext APIs.</li>
           </ul>
         </div>
 
@@ -100,7 +100,7 @@ export default function GetStartedPage() {
             Open Agent Play World
           </a>
           <Link
-            href="/#connect"
+            href="/#account"
             className="rounded-full border border-[color:var(--line)] bg-white px-5 py-2.5 text-sm font-semibold text-[color:var(--ink)]"
           >
             I already have credentials

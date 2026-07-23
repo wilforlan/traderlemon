@@ -12,6 +12,7 @@ import {
   XAxis,
   YAxis,
 } from "recharts";
+import { Activity, ChartColumn } from "lucide-react";
 
 import type { MarketRates } from "@/lib/conversion";
 import { buildSyntheticRateSeries, formatRateLabel } from "@/lib/market-series";
@@ -37,42 +38,60 @@ export const MarketCharts = (props: { readonly rates: MarketRates | null }) => {
   }
 
   return (
-    <section className="mx-auto max-w-6xl px-4 pb-16 sm:px-6">
-      <div className="mb-6 flex flex-wrap items-end justify-between gap-3">
-        <div>
-          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[color:var(--gold-deep)]">
-            Time series
-          </p>
-          <h2 className="mt-2 font-[family-name:var(--font-display)] text-3xl text-[color:var(--ink)]">
-            Pricing & flow analytics
+    <section className="mx-auto max-w-6xl px-4 py-20 sm:px-6">
+      <div className="mb-12 flex flex-wrap items-end justify-between gap-6">
+        <div className="max-w-lg">
+          <span className="bank-badge">
+            <Activity size={12} aria-hidden className="text-[color:var(--green)]" />
+            Markets
+          </span>
+          <h2 className="mt-5 font-[family-name:var(--font-display)] text-3xl tracking-tight text-[color:var(--ink)] sm:text-4xl">
+            Pricing & flow
           </h2>
-        </div>
-        <p className="max-w-sm text-sm text-[color:var(--ink-muted)]">
-          Desk view of net APU/SOL mid and illustrative flow volume. Live mid is sourced
-          from Econext; the path is a fintech-style session tape for the landing desk.
-        </p>
-      </div>
-      <div className="grid gap-4 lg:grid-cols-2">
-        <div className="rounded-[1.5rem] border border-[color:var(--line)] bg-white/85 p-4 shadow-sm">
-          <p className="text-sm font-semibold text-[color:var(--ink)]">APU → SOL mid</p>
-          <p className="mt-1 text-xs text-[color:var(--ink-muted)]">
-            Session path around {formatRateLabel(props.rates.netApuToSolRate)} SOL
+          <p className="mt-3 text-sm leading-relaxed text-[color:var(--ink-muted)]">
+            Live mid from Econext, with a calm session tape for the desk view.
           </p>
-          <div className="mt-4 h-56">
+        </div>
+      </div>
+
+      <div className="grid gap-6 lg:grid-cols-2">
+        <article className="bank-card p-5 sm:p-6">
+          <div className="flex items-start justify-between gap-3">
+            <div>
+              <p className="text-sm font-semibold text-[color:var(--ink)]">
+                APU → SOL mid
+              </p>
+              <p className="mt-1 text-xs text-[color:var(--ink-muted)]">
+                Around {formatRateLabel(props.rates.netApuToSolRate)} SOL
+              </p>
+            </div>
+            <span className="bank-badge">
+              <ChartColumn size={12} aria-hidden />
+              Live
+            </span>
+          </div>
+          <div className="mt-6 h-56">
             <ResponsiveContainer width="100%" height="100%">
               <AreaChart data={series}>
                 <defs>
                   <linearGradient id="apuSolFill" x1="0" y1="0" x2="0" y2="1">
-                    <stop offset="0%" stopColor="#2D9B6A" stopOpacity={0.35} />
-                    <stop offset="100%" stopColor="#2D9B6A" stopOpacity={0.02} />
+                    <stop offset="0%" stopColor="#178556" stopOpacity={0.28} />
+                    <stop offset="100%" stopColor="#178556" stopOpacity={0.02} />
                   </linearGradient>
                 </defs>
-                <CartesianGrid stroke="#d7e8dc" strokeDasharray="3 3" />
-                <XAxis dataKey="label" tick={{ fontSize: 11, fill: "#5f7366" }} />
+                <CartesianGrid stroke="#e5ece8" strokeDasharray="3 3" vertical={false} />
+                <XAxis
+                  dataKey="label"
+                  tick={{ fontSize: 11, fill: "#667870" }}
+                  axisLine={false}
+                  tickLine={false}
+                />
                 <YAxis
                   domain={["auto", "auto"]}
-                  tick={{ fontSize: 11, fill: "#5f7366" }}
+                  tick={{ fontSize: 11, fill: "#667870" }}
                   width={64}
+                  axisLine={false}
+                  tickLine={false}
                   tickFormatter={(value: number) => formatRateLabel(value)}
                 />
                 <Tooltip
@@ -84,31 +103,47 @@ export const MarketCharts = (props: { readonly rates: MarketRates | null }) => {
                 <Area
                   type="monotone"
                   dataKey="apuSol"
-                  stroke="#1B7A4E"
+                  stroke="#0f6b45"
                   fill="url(#apuSolFill)"
                   strokeWidth={2}
                 />
               </AreaChart>
             </ResponsiveContainer>
           </div>
-        </div>
-        <div className="rounded-[1.5rem] border border-[color:var(--line)] bg-white/85 p-4 shadow-sm">
-          <p className="text-sm font-semibold text-[color:var(--ink)]">Desk volume</p>
-          <p className="mt-1 text-xs text-[color:var(--ink-muted)]">
-            Illustrative APU notional traded per hour
-          </p>
-          <div className="mt-4 h-56">
+        </article>
+
+        <article className="bank-card p-5 sm:p-6">
+          <div className="flex items-start justify-between gap-3">
+            <div>
+              <p className="text-sm font-semibold text-[color:var(--ink)]">Desk volume</p>
+              <p className="mt-1 text-xs text-[color:var(--ink-muted)]">
+                Illustrative APU notional per hour
+              </p>
+            </div>
+            <span className="bank-badge normal-case tracking-normal">Session</span>
+          </div>
+          <div className="mt-6 h-56">
             <ResponsiveContainer width="100%" height="100%">
               <BarChart data={series}>
-                <CartesianGrid stroke="#d7e8dc" strokeDasharray="3 3" />
-                <XAxis dataKey="label" tick={{ fontSize: 11, fill: "#5f7366" }} />
-                <YAxis tick={{ fontSize: 11, fill: "#5f7366" }} width={48} />
+                <CartesianGrid stroke="#e5ece8" strokeDasharray="3 3" vertical={false} />
+                <XAxis
+                  dataKey="label"
+                  tick={{ fontSize: 11, fill: "#667870" }}
+                  axisLine={false}
+                  tickLine={false}
+                />
+                <YAxis
+                  tick={{ fontSize: 11, fill: "#667870" }}
+                  width={48}
+                  axisLine={false}
+                  tickLine={false}
+                />
                 <Tooltip />
-                <Bar dataKey="volume" fill="#C9A227" radius={[6, 6, 0, 0]} />
+                <Bar dataKey="volume" fill="#c4a035" radius={[8, 8, 0, 0]} />
               </BarChart>
             </ResponsiveContainer>
           </div>
-        </div>
+        </article>
       </div>
     </section>
   );

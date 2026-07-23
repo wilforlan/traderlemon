@@ -4,7 +4,7 @@ import { WebsiteJsonLd } from "@/components/website-json-ld";
 
 export default function Home() {
   return (
-    <main className="min-h-dvh bg-[color:var(--bg)]">
+    <main className="min-h-dvh">
       <WebsiteJsonLd />
       <SiteHeader />
       <LandingPage />

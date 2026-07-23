@@ -1,6 +1,6 @@
-# Traderlemon
+# v0peer
 
-Next.js trading desk for Agent Play **APU**. Users connect a Solana wallet (WalletConnect / Phantom) and authenticate by uploading their Agent Play World `credentials.json`. All banking and conversion APIs live in **Econext** — this app never talks to Redis or a database.
+Next.js peer trading desk for Agent Play **APU**. Users connect any Solana wallet through **WalletConnect** (Reown AppKit) and authenticate by uploading their Agent Play World `credentials.json`. All banking and conversion APIs live in **Econext** — this app never talks to Redis or a database.
 
 ## Stack
 
@@ -11,7 +11,7 @@ Next.js trading desk for Agent Play **APU**. Users connect a Solana wallet (Wall
 
 ## SEO
 
-Document titles, Open Graph / Twitter cards, icons, `robots.txt`, and `sitemap.xml` are driven by `src/lib/site-seo.ts`. Set `NEXT_PUBLIC_APP_URL` to the canonical production origin so share URLs and the sitemap resolve correctly. Assets live at `/traderlemon-og.png` and `/traderlemon-icon.png`.
+Document titles, Open Graph / Twitter cards, icons, `robots.txt`, and `sitemap.xml` are driven by `src/lib/site-seo.ts`. Set `NEXT_PUBLIC_APP_URL` to the canonical production origin so share URLs and the sitemap resolve correctly. Assets live at `/v0peer-og.png` and `/v0peer-icon.png`.
 
 ## Setup
 
@@ -31,8 +31,16 @@ Runs on [http://localhost:3002](http://localhost:3002) by default (script). Star
 | `npm test` | Vitest (conversion + credentials) |
 | `npm run build` | Production build |
 
+## WalletConnect
+
+Solana wallets connect only through Reown AppKit / WalletConnect (no Phantom-injected provider).
+
+1. Create a project at [dashboard.reown.com](https://dashboard.reown.com).
+2. Set `NEXT_PUBLIC_WALLETCONNECT_PROJECT_ID` in `.env.local`.
+3. Set `NEXT_PUBLIC_APP_URL` to the origin users will open (required for WalletConnect metadata).
+
 ## Auth
 
 1. Create an Agent Play World account and save `credentials.json`.
-2. On Traderlemon, open **Get started** or click **Create Agent Play World Account**.
-3. Upload the file on the Connect panel — Traderlemon proxies to Econext `POST /api/auth/connect`.
+2. On v0peer, open **Get started** or click **Create Agent Play World Account**.
+3. Upload the file on the account panel — v0peer proxies to Econext `POST /api/auth/connect`.

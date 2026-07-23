@@ -15,7 +15,7 @@ const pillars = [
   },
   {
     title: "Settle with transparent rails",
-    body: "Pricing and conversion still settle through Econext APIs. You never run your own ledger in Traderlemon; you plug into the published bank.",
+    body: "Pricing and conversion still settle through Econext APIs. You never run your own ledger in v0peer; you plug into the published bank.",
     icon: Receipt,
   },
   {
@@ -44,7 +44,7 @@ export default function MerchantPage() {
             Merchants
           </p>
           <h1 className="mt-3 max-w-2xl font-[family-name:var(--font-display)] text-4xl tracking-tight text-[color:var(--ink)] sm:text-5xl">
-            Become a merchant on the APU desk
+            Become a merchant on the peer APU desk
           </h1>
           <p className="mt-4 max-w-2xl text-base leading-relaxed text-[color:var(--ink-muted)]">
             Turn storefronts, creator shops, and civic services into APU-accepting
@@ -59,7 +59,7 @@ export default function MerchantPage() {
               Start with an Agent Play account
             </Link>
             <Link
-              href="/#connect"
+              href="/#account"
               className="rounded-full border border-[color:var(--line)] bg-white/80 px-5 py-2.5 text-sm font-semibold text-[color:var(--ink)]"
             >
               Connect credentials
@@ -97,13 +97,13 @@ export default function MerchantPage() {
           </h2>
           <ol className="mt-5 list-decimal space-y-3 pl-5 text-sm leading-relaxed text-white/90">
             <li>Create or recover your Agent Play World account and save credentials.json.</li>
-            <li>Connect the file on Traderlemon and link the Solana wallet that will settle.</li>
+            <li>Connect the file on v0peer and link the Solana wallet that will settle.</li>
             <li>Describe your merchant category, settlement preference, and neighborhood.</li>
             <li>Accept APU at your listed rate; cash out bankable APU through Econext when ready.</li>
           </ol>
           <p className="mt-6 text-sm text-white/80">
-            Merchant application APIs will continue to live in Econext. Traderlemon remains
-            the trading and onboarding surface — no direct database access.
+            Merchant application APIs will continue to live in Econext. v0peer remains
+            the peer trading and onboarding surface — no direct database access.
           </p>
         </div>
       </section>

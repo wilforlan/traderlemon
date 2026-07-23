@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useRef, useState } from "react";
-import { FileJson, Upload } from "lucide-react";
+import { FileJson, KeyRound, Upload } from "lucide-react";
 
 import { connectWithCredentials } from "@/lib/econext-client";
 import { parseCredentialsUpload } from "@/lib/credentials";
@@ -59,7 +59,7 @@ export const AuthPanel = () => {
     setError(null);
     try {
       await connectWithCredentials({ json: loaded.rawJson });
-      router.push("/#convert");
+      router.push("/#trade");
       router.refresh();
     } catch (connectError) {
       setError(
@@ -72,39 +72,40 @@ export const AuthPanel = () => {
 
   return (
     <section
-      id="connect"
-      className="mx-auto max-w-6xl scroll-mt-24 px-4 pb-20 sm:px-6"
+      id="account"
+      className="mx-auto max-w-6xl scroll-mt-28 px-4 pb-28 sm:px-6"
     >
-      <div className="grid gap-6 rounded-[1.75rem] border border-[color:var(--line)] bg-[linear-gradient(135deg,rgba(244,251,246,0.95),rgba(255,250,230,0.9))] p-6 lg:grid-cols-[1fr_1.1fr] lg:p-8">
-        <div>
-          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[color:var(--gold-deep)]">
+      <div className="bank-card grid gap-10 p-8 lg:grid-cols-[0.9fr_1.1fr] lg:p-12">
+        <div className="max-w-md">
+          <span className="bank-badge">
+            <KeyRound size={12} aria-hidden className="text-[color:var(--green)]" />
             Account
-          </p>
-          <h2 className="mt-2 font-[family-name:var(--font-display)] text-3xl text-[color:var(--ink)]">
-            Authenticate with your credentials file
+          </span>
+          <h2 className="mt-5 font-[family-name:var(--font-display)] text-3xl tracking-tight text-[color:var(--ink)] sm:text-4xl">
+            Authenticate with credentials
           </h2>
-          <p className="mt-3 text-sm leading-relaxed text-[color:var(--ink-muted)]">
-            Traderlemon uses your Agent Play World credentials.json — never a database of
-            its own. Upload the file you saved when you created your account.
+          <p className="mt-4 text-sm leading-relaxed text-[color:var(--ink-muted)]">
+            Upload the Agent Play World credentials.json you saved when you created your
+            account. v0peer never stores passwords in its own database.
           </p>
           <Link
             href="/get-started"
-            className="mt-6 inline-flex rounded-full bg-[color:var(--green)] px-5 py-2.5 text-sm font-semibold text-white shadow-[0_12px_30px_rgba(27,122,78,0.22)]"
+            className="btn-fluid btn-primary mt-8 px-5 py-3 text-sm"
           >
             Create Agent Play World Account
           </Link>
         </div>
 
-        <div className="rounded-[1.35rem] border border-[color:var(--line)] bg-white/90 p-5">
+        <div className="rounded-[1.5rem] border border-[color:var(--line)] bg-[color:var(--surface-soft)] p-5 shadow-[var(--shadow-sm)] sm:p-6">
           {loaded === null ? (
-            <label className="flex cursor-pointer flex-col items-center justify-center gap-3 rounded-2xl border border-dashed border-[color:var(--line)] bg-[color:var(--mint)]/35 px-6 py-10 text-center transition-colors hover:border-[color:var(--green)]">
-              <span className="inline-flex h-12 w-12 items-center justify-center rounded-full bg-white shadow-sm">
-                <Upload size={20} className="text-[color:var(--green)]" />
+            <label className="flex cursor-pointer flex-col items-center justify-center gap-3 rounded-[1.25rem] border border-dashed border-[color:var(--line)] bg-white px-6 py-12 text-center transition-[border-color,box-shadow] hover:border-[color:var(--green)] hover:shadow-[var(--shadow-md)]">
+              <span className="inline-flex h-12 w-12 items-center justify-center rounded-full bg-[color:var(--mint)] text-[color:var(--green)] shadow-[var(--shadow-sm)]">
+                <Upload size={20} aria-hidden />
               </span>
-              <span className="text-sm font-medium text-[color:var(--ink)]">
+              <span className="text-sm font-semibold text-[color:var(--ink)]">
                 Upload credentials.json
               </span>
-              <span className="max-w-sm text-xs text-[color:var(--ink-muted)]">
+              <span className="max-w-sm text-xs leading-relaxed text-[color:var(--ink-muted)]">
                 Your passphrase stays local until you confirm connect.
               </span>
               <input
@@ -118,7 +119,7 @@ export const AuthPanel = () => {
             </label>
           ) : (
             <div className="space-y-4">
-              <div className="flex items-start gap-3 rounded-2xl border border-[color:var(--line)] bg-[color:var(--mint)]/30 px-4 py-3">
+              <div className="flex items-start gap-3 rounded-2xl border border-[color:var(--line)] bg-white px-4 py-3 shadow-[var(--shadow-sm)]">
                 <FileJson className="mt-0.5 text-[color:var(--green)]" size={18} />
                 <div>
                   <p className="text-sm font-semibold text-[color:var(--ink)]">
@@ -134,14 +135,14 @@ export const AuthPanel = () => {
                   type="button"
                   onClick={() => void onConnect()}
                   disabled={busy}
-                  className="rounded-full bg-[color:var(--green)] px-4 py-2 text-sm font-semibold text-white disabled:opacity-60"
+                  className="btn-fluid btn-primary px-4 py-2.5 text-sm"
                 >
                   {busy ? "Connecting…" : "Connect account"}
                 </button>
                 <button
                   type="button"
                   onClick={() => setLoaded(null)}
-                  className="rounded-full border border-[color:var(--line)] px-4 py-2 text-sm text-[color:var(--ink-muted)]"
+                  className="btn-fluid btn-secondary px-4 py-2.5 text-sm"
                 >
                   Choose another file
                 </button>
@@ -149,7 +150,7 @@ export const AuthPanel = () => {
             </div>
           )}
           {error !== null ? (
-            <p className="mt-4 rounded-xl border border-red-200 bg-red-50 px-3 py-2 text-sm text-red-800">
+            <p className="mt-4 rounded-xl border border-red-100 bg-red-50/90 px-3 py-2 text-sm text-red-800">
               {error}
             </p>
           ) : null}

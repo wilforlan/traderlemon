@@ -11,7 +11,7 @@ const SitePageSeoSchema = z.object({
 });
 
 const SiteSeoSchema = z.object({
-  brandName: z.literal("Traderlemon"),
+  brandName: z.literal("v0peer"),
   defaultTitle: z.string().min(1),
   defaultDescription: z.string().min(1),
   openGraphTitle: z.string().min(1),
@@ -20,12 +20,12 @@ const SiteSeoSchema = z.object({
   twitterDescription: z.string().min(1),
   keywords: z.array(z.string().min(1)).min(4),
   ogImage: z.object({
-    path: z.literal("/traderlemon-og.png"),
+    path: z.literal("/v0peer-og.png"),
     width: z.literal(1200),
     height: z.literal(630),
     alt: z.string().min(1),
   }),
-  iconPath: z.literal("/traderlemon-icon.png"),
+  iconPath: z.literal("/v0peer-icon.png"),
   pages: z.object({
     home: SitePageSeoSchema,
     "get-started": SitePageSeoSchema,
@@ -34,18 +34,18 @@ const SiteSeoSchema = z.object({
 });
 
 export const siteSeo = SiteSeoSchema.parse({
-  brandName: "Traderlemon",
-  defaultTitle: "Traderlemon — Trade APU on Agent Play's second economy",
+  brandName: "v0peer",
+  defaultTitle: "v0peer — Peer APU desk for Agent Play",
   defaultDescription:
-    "Convert SOL to APU on Traderlemon, the Agent Play trading desk. Connect a Solana wallet, settle through Econext rates, and circulate growth into community.",
-  openGraphTitle: "Traderlemon — APU trading desk for Agent Play",
+    "Convert SOL to APU on v0peer, the peer trading desk for Agent Play. Connect a Solana wallet, settle through Econext rates, and circulate growth into community.",
+  openGraphTitle: "v0peer — Peer APU desk for Agent Play",
   openGraphDescription:
-    "Buy and sell Agent Play APU with WalletConnect. SOL↔APU conversion on a desk built for the second economy — growth that funds social development.",
-  twitterTitle: "Traderlemon — Trade APU with SOL",
+    "Buy and sell Agent Play APU peer-to-peer with WalletConnect. SOL↔APU conversion on a calm desk built for the second economy.",
+  twitterTitle: "v0peer — Trade APU with SOL",
   twitterDescription:
-    "The Agent Play APU desk: convert SOL, connect credentials, and move liquidity through merchants and neighborhoods.",
+    "The Agent Play peer APU desk: convert SOL, connect credentials, and move liquidity through merchants and neighborhoods.",
   keywords: [
-    "Traderlemon",
+    "v0peer",
     "APU",
     "Agent Play",
     "Solana",
@@ -53,31 +53,32 @@ export const siteSeo = SiteSeoSchema.parse({
     "WalletConnect",
     "second economy",
     "Econext",
+    "peer trading",
   ],
   ogImage: {
-    path: "/traderlemon-og.png",
+    path: "/v0peer-og.png",
     width: 1200,
     height: 630,
-    alt: "Traderlemon — Trade APU on Agent Play's second economy",
+    alt: "v0peer — Peer APU desk for Agent Play",
   },
-  iconPath: "/traderlemon-icon.png",
+  iconPath: "/v0peer-icon.png",
   pages: {
     home: {
       title: "Trade APU",
       description:
-        "Convert SOL to APU on Traderlemon, the Agent Play trading desk. Connect a Solana wallet, settle through Econext rates, and circulate growth into community.",
+        "Convert SOL to APU on v0peer, the peer trading desk for Agent Play. Connect a Solana wallet, settle through Econext rates, and circulate growth into community.",
       path: "/",
     },
     "get-started": {
       title: "Create Agent Play World account",
       description:
-        "Create an Agent Play World account, save credentials.json, and connect safely on Traderlemon. No password reset — the file is your key to the APU desk.",
+        "Create an Agent Play World account, save credentials.json, and connect safely on v0peer. No password reset — the file is your key to the peer APU desk.",
       path: "/get-started",
     },
     merchant: {
       title: "Become an APU merchant",
       description:
-        "Accept APU for goods and services on Agent Play's second economy. List as a merchant on Traderlemon and help circulate growth into local social development.",
+        "Accept APU for goods and services on Agent Play's second economy. List as a merchant on v0peer and help circulate growth into local social development.",
       path: "/merchant",
     },
   },
@@ -104,14 +105,14 @@ export const buildRootMetadata = (
     metadataBase: new URL(appUrl),
     title: {
       default: siteSeo.defaultTitle,
-      template: "%s · Traderlemon",
+      template: "%s · v0peer",
     },
     description: siteSeo.defaultDescription,
     applicationName: siteSeo.brandName,
     keywords: siteSeo.keywords,
-    authors: [{ name: "Traderlemon" }],
-    creator: "Traderlemon",
-    publisher: "Traderlemon",
+    authors: [{ name: "v0peer" }],
+    creator: "v0peer",
+    publisher: "v0peer",
     category: "finance",
     alternates: {
       canonical: "/",
@@ -165,7 +166,7 @@ export const buildPageMetadata = (
       canonical: page.path,
     },
     openGraph: {
-      title: `${page.title} · Traderlemon`,
+      title: `${page.title} · v0peer`,
       description: page.description,
       url: page.path,
       images: [
@@ -179,7 +180,7 @@ export const buildPageMetadata = (
     },
     twitter: {
       card: "summary_large_image",
-      title: `${page.title} · Traderlemon`,
+      title: `${page.title} · v0peer`,
       description: page.description,
       images: [siteSeo.ogImage.path],
     },
