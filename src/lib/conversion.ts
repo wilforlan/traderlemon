@@ -16,31 +16,22 @@ export const MarketRatesSchema = z.object({
 
 export type MarketRates = z.infer<typeof MarketRatesSchema>;
 
-const spreadFactor = (spreadBps: number): number => 1 - spreadBps / 10_000;
-
 export const quoteSolToApu = (input: {
   readonly solAmount: number;
-  readonly rates: Pick<MarketRates, "apuToSolRate" | "conversionSpreadBps">;
+  readonly rates: Pick<MarketRates, "netSolToApuRate">;
 }): number => {
   if (!Number.isFinite(input.solAmount) || input.solAmount <= 0) {
     return 0;
   }
-  return Math.floor(
-    (input.solAmount / input.rates.apuToSolRate) *
-      spreadFactor(input.rates.conversionSpreadBps),
-  );
+  return Math.floor(input.solAmount * input.rates.netSolToApuRate);
 };
 
 export const quoteApuToSol = (input: {
   readonly apuAmount: number;
-  readonly rates: Pick<MarketRates, "apuToSolRate" | "conversionSpreadBps">;
+  readonly rates: Pick<MarketRates, "netApuToSolRate">;
 }): number => {
   if (!Number.isFinite(input.apuAmount) || input.apuAmount <= 0) {
     return 0;
   }
-  return (
-    input.apuAmount *
-    input.rates.apuToSolRate *
-    spreadFactor(input.rates.conversionSpreadBps)
-  );
+  return input.apuAmount * input.rates.netApuToSolRate;
 };

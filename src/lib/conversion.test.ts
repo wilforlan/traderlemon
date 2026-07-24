@@ -12,23 +12,24 @@ const getMockRates = (overrides?: Partial<MarketRates>): MarketRates => ({
   solUsdReferenceRate: 150,
   minConvertApu: 50,
   minConvertSol: 0.001,
-  netApuToSolRate: 0.00045 * 0.985,
-  netSolToApuRate: (1 / 0.00045) * 0.985,
-  apwPerApu: 0.00045 * 0.985 * 150,
+  netApuToSolRate: 0.0664875 / (1.9 * 75.85),
+  netSolToApuRate: ((1.9 * 75.85) / (0.00045 * 150)) * 0.985,
+  apwPerApu: 0.0664875,
   ...overrides,
 });
 
 describe("SOL to APU quotes", () => {
-  it("floors APU credited after conversion spread", () => {
+  it("floors APU credited from published net SOL→APU rate", () => {
     const rates = getMockRates();
     expect(quoteSolToApu({ solAmount: 0.1, rates })).toBe(
-      Math.floor((0.1 / 0.00045) * 0.985),
+      Math.floor(0.1 * rates.netSolToApuRate),
     );
   });
 
-  it("returns net SOL for APU sells", () => {
-    expect(quoteApuToSol({ apuAmount: 100, rates: getMockRates() })).toBeCloseTo(
-      100 * 0.00045 * 0.985,
+  it("returns net SOL for APU sells from published net APU→SOL rate", () => {
+    const rates = getMockRates();
+    expect(quoteApuToSol({ apuAmount: 100, rates })).toBeCloseTo(
+      100 * rates.netApuToSolRate,
       10,
     );
   });
