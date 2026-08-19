@@ -12,6 +12,7 @@ import {
 
 import { CommunityCta } from "@/components/community-cta";
 import { ConnectToServer } from "@/components/connect-to-server";
+import { SiteLogo } from "@/components/site-logo";
 import { World1 } from "@/components/world1";
 import { EARN_URL, WORLD_SERVER_URL } from "@/lib/site-links";
 
@@ -79,9 +80,12 @@ export const LandingPage = () => {
                 <span className="bank-badge">Virtual world</span>
               </div>
 
-              <p className="mt-8 font-[family-name:var(--font-display)] text-5xl leading-[0.96] tracking-tight text-[color:var(--ink)] sm:text-6xl lg:text-7xl">
-                v0peer
-              </p>
+              <div className="mt-8 flex items-center gap-4">
+                <SiteLogo size={72} />
+                <p className="font-[family-name:var(--font-display)] text-5xl leading-[0.96] tracking-tight text-[color:var(--ink)] sm:text-6xl lg:text-7xl">
+                  v0peer
+                </p>
+              </div>
 
               <h1 className="mt-6 max-w-2xl text-2xl font-medium leading-snug tracking-tight text-[color:var(--ink)] sm:text-3xl">
                 Believe in a digital city with a real second economy.
@@ -183,7 +187,7 @@ export const LandingPage = () => {
               Community first
             </span>
             <h2 className="mt-5 font-[family-name:var(--font-display)] text-3xl tracking-tight text-[color:var(--ink)] sm:text-4xl">
-              The city grows in Slack before it grows on-chain
+              The city grows on-chain.
             </h2>
             <p className="mt-4 text-sm leading-relaxed text-[color:var(--ink-muted)] sm:text-base">
               Builders, storytellers, merchants, and curious visitors meet in one room.

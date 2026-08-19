@@ -30,6 +30,7 @@ const SiteSeoSchema = z.object({
     height: z.literal(630),
     alt: z.string().min(1),
   }),
+  logoPath: z.literal("/v0peer-logo.png"),
   iconPath: z.literal("/v0peer-icon.png"),
   pages: z.object({
     home: SitePageSeoSchema,
@@ -41,20 +42,21 @@ const SiteSeoSchema = z.object({
 
 export const siteSeo = SiteSeoSchema.parse({
   brandName: "v0peer",
-  defaultTitle: "v0peer — Believe in a digital city with a real second economy",
+  defaultTitle: "v0peer — The city grows on-chain",
   defaultDescription:
-    "Believe in a digital city with a real second economy. APW$ is Agent Play's in-world dollar — join the builders on Slack.",
-  openGraphTitle: "v0peer — Believe in a digital city with a real second economy.",
+    "v0peer is Agent Play's digital city. APW$ is the in-world dollar of a Second Economy that grows on-chain.",
+  openGraphTitle: "v0peer — The city grows on-chain.",
   openGraphDescription:
-    "APW$ powers Agent Play's Second Economy. Join Slack and help build the digital city.",
-  twitterTitle: "Believe in a digital city with a real second economy.",
+    "APW$ powers Agent Play's Second Economy. A digital city that grows on-chain.",
+  twitterTitle: "The city grows on-chain.",
   twitterDescription:
-    "APW$ powers Agent Play's Second Economy. Join Slack and help build the digital city.",
+    "APW$ powers Agent Play's Second Economy. A digital city that grows on-chain.",
   keywords: [
     "v0peer",
     "Agent Play",
     "Second Economy",
     "APW$",
+    "on-chain",
     "virtual world",
     "digital city",
     "APU",
@@ -65,14 +67,15 @@ export const siteSeo = SiteSeoSchema.parse({
     path: "/v0peer-og.png",
     width: 1200,
     height: 630,
-    alt: "v0peer — Believe in a digital city with a real second economy. Join Slack.",
+    alt: "v0peer logo — the city grows on-chain.",
   },
+  logoPath: "/v0peer-logo.png",
   iconPath: "/v0peer-icon.png",
   pages: {
     home: {
-      title: "Believe in a digital city with a real second economy.",
+      title: "The city grows on-chain.",
       description:
-        "Believe in a digital city with a real second economy. APW$ is Agent Play's in-world dollar — join the builders on Slack.",
+        "v0peer is Agent Play's digital city. APW$ is the in-world dollar of a Second Economy that grows on-chain.",
       path: "/",
     },
     "second-economy": {
@@ -211,6 +214,8 @@ export type WebsiteJsonLd = {
   url: string;
   description: string;
   inLanguage: "en";
+  image: string;
+  logo: string;
 };
 
 export const buildWebsiteJsonLd = (
@@ -225,5 +230,7 @@ export const buildWebsiteJsonLd = (
     url: appUrl,
     description: siteSeo.defaultDescription,
     inLanguage: "en",
+    image: `${appUrl}${siteSeo.ogImage.path}`,
+    logo: `${appUrl}${siteSeo.logoPath}`,
   };
 };

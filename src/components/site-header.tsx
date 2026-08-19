@@ -7,6 +7,7 @@ import { ExternalLink, Menu, X } from "lucide-react";
 import clsx from "clsx";
 
 import { CommunityCta } from "@/components/community-cta";
+import { SiteLogo } from "@/components/site-logo";
 import { siteNav } from "@/lib/site-links";
 
 export const SiteHeader = () => {
@@ -38,8 +39,12 @@ export const SiteHeader = () => {
   return (
     <header className="sticky top-0 z-30 border-b border-[color:var(--line)]/80 bg-[color:var(--surface)]/75 backdrop-blur-xl">
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-4 sm:px-6">
-        <Link href="/" className="font-[family-name:var(--font-display)] text-2xl tracking-tight text-[color:var(--ink)]">
-          v0peer
+        <Link
+          href="/"
+          className="flex items-center gap-2.5 font-[family-name:var(--font-display)] text-2xl tracking-tight text-[color:var(--ink)]"
+        >
+          <SiteLogo />
+          <span>v0peer</span>
         </Link>
 
         <nav className="hidden items-center gap-1 md:flex md:gap-1.5">
