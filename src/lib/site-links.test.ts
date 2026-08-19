@@ -2,6 +2,8 @@ import { describe, expect, it } from "vitest";
 
 import {
   EARN_URL,
+  WORLD_SERVER_HOST,
+  WORLD_SERVER_URL,
   resolveAgentPlayUrl,
   resolveSlackCommunityUrl,
   siteNav,
@@ -30,5 +32,10 @@ describe("v0peer public links", () => {
       "https://play.example",
     );
     expect(resolveAgentPlayUrl(undefined)).toBe("https://agentplay.world");
+  });
+
+  it("publishes the canonical world server URL", () => {
+    expect(WORLD_SERVER_HOST).toBe("world1.v0peer.org");
+    expect(WORLD_SERVER_URL).toBe("https://world1.v0peer.org");
   });
 });

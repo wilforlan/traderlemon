@@ -12,7 +12,7 @@ describe("v0peer SEO content", () => {
   it("keeps the brand as the primary document title signal", () => {
     expect(siteSeo.brandName).toBe("v0peer");
     expect(siteSeo.defaultTitle.startsWith("v0peer")).toBe(true);
-    expect(siteSeo.defaultTitle).toMatch(/Second Economy/);
+    expect(siteSeo.defaultTitle).toMatch(/second economy/i);
     expect(siteSeo.defaultTitle.length).toBeLessThanOrEqual(70);
   });
 
@@ -59,6 +59,7 @@ describe("v0peer SEO content", () => {
     expect(SitePageKeySchema.parse("second-economy")).toBe("second-economy");
     expect(page.title).toBe(siteSeo.pages["second-economy"].title);
     expect(page.description).toMatch(/APW\$/);
+    expect(page.description).not.toMatch(/city-builder/i);
     expect(page.openGraph?.url).toBe("/second-economy");
   });
 

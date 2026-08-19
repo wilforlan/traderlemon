@@ -21,13 +21,14 @@ Set:
 - `NEXT_PUBLIC_APP_URL` — canonical site origin
 - `NEXT_PUBLIC_SLACK_COMMUNITY_URL` — Slack invite link (enables Join Slack)
 - `NEXT_PUBLIC_AGENT_PLAY_URL` — Agent Play World entry URL
+- World server (CLI / credentials `serverUrl`): `https://world1.v0peer.org`
 
 ## Routes
 
 | Path | Purpose |
 |------|---------|
 | `/` | Second Economy landing / belief page |
-| `/second-economy` | Deep dive: APW$, city-builder analogy |
+| `/second-economy` | Deep dive: APW$, neighborhoods, shared prosperity |
 | Earn (nav) | External → https://econext.llc |
 
 ## Scripts

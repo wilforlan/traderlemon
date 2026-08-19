@@ -13,6 +13,7 @@ import {
 import { CommunityCta } from "@/components/community-cta";
 import { SiteHeader } from "@/components/site-header";
 import { EARN_URL } from "@/lib/site-links";
+import { secondEconomyCopy } from "@/lib/second-economy-copy";
 import { buildPageMetadata } from "@/lib/site-seo";
 
 export const metadata: Metadata = buildPageMetadata({ page: "second-economy" });
@@ -20,7 +21,7 @@ export const metadata: Metadata = buildPageMetadata({ page: "second-economy" });
 const layers = [
   {
     title: "Neighborhoods as the unit of life",
-    body: "Think city builder, not casino lobby. Blocks fill with cafés, studios, parks, and civic desks. Value moves because people have places to gather and reasons to return.",
+    body: secondEconomyCopy.inhabitedStreetsLead,
     icon: MapPinned,
     tag: "Places",
   },
@@ -77,7 +78,7 @@ export default function SecondEconomyPage() {
                 Second Economy
               </span>
               <span className="bank-badge">APW$</span>
-              <span className="bank-badge">City builder</span>
+              <span className="bank-badge">{secondEconomyCopy.heroBadge}</span>
             </div>
 
             <h1 className="mt-8 font-[family-name:var(--font-display)] text-4xl leading-[1.05] tracking-tight text-[color:var(--ink)] sm:text-5xl lg:text-6xl">
@@ -110,15 +111,13 @@ export default function SecondEconomyPage() {
           <div>
             <span className="bank-badge">
               <Building2 size={12} aria-hidden className="text-[color:var(--green)]" />
-              City builder analogy
+              {secondEconomyCopy.picture.badge}
             </span>
             <h2 className="mt-5 font-[family-name:var(--font-display)] text-3xl tracking-tight text-[color:var(--ink)]">
-              Imagine SimCity, but the residents can earn, trade, and fund the commons
+              {secondEconomyCopy.picture.headline}
             </h2>
             <p className="mt-4 text-sm leading-relaxed text-[color:var(--ink-muted)]">
-              The metaphor is deliberate. A healthy city is not a score counter — it is
-              density, trust, and circulation. Agent Play uses that intuition so the
-              Second Economy feels legible on day one.
+              {secondEconomyCopy.picture.body}
             </p>
           </div>
           <ul className="grid gap-3 sm:grid-cols-2">

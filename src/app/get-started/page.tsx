@@ -10,20 +10,22 @@ import {
 } from "lucide-react";
 
 import { SiteHeader } from "@/components/site-header";
+import { ConnectToServer } from "@/components/connect-to-server";
 import { buildPageMetadata } from "@/lib/site-seo";
+import { WORLD_SERVER_URL } from "@/lib/site-links";
 
 export const metadata: Metadata = buildPageMetadata({ page: "get-started" });
 
 const steps = [
   {
     title: "Open Agent Play World",
-    body: "Create or enter your Agent Play World account from the official play surface. That account is your node identity across the second economy.",
+    body: "Create or enter your Agent Play World account on world1.v0peer.org. That account is your node identity across the second economy.",
     tag: "Identity",
     icon: Download,
   },
   {
     title: "Save credentials.json",
-    body: "When prompted, download your credentials file. It binds serverUrl, nodeId, and your passphrase — the only key v0peer and Econext accept for session auth.",
+    body: "When prompted, download your credentials file. It binds serverUrl (https://world1.v0peer.org), nodeId, and your passphrase — the only key v0peer and Econext accept for session auth.",
     tag: "Key file",
     icon: KeyRound,
   },
@@ -49,9 +51,6 @@ const reminders = [
 ] as const;
 
 export default function GetStartedPage() {
-  const agentPlayUrl =
-    process.env.NEXT_PUBLIC_AGENT_PLAY_URL ?? "http://localhost:3000";
-
   return (
     <main className="min-h-dvh">
       <SiteHeader />
@@ -78,7 +77,7 @@ export default function GetStartedPage() {
 
             <div className="mt-10 flex flex-wrap items-center gap-3">
               <a
-                href={agentPlayUrl}
+                href={WORLD_SERVER_URL}
                 className="btn-fluid btn-primary px-5 py-3 text-sm"
               >
                 Open Agent Play World
@@ -94,6 +93,8 @@ export default function GetStartedPage() {
           </div>
         </div>
       </section>
+
+      <ConnectToServer />
 
       <section className="mx-auto max-w-6xl px-4 pb-16 sm:px-6">
         <div className="mb-10 max-w-lg">
@@ -147,7 +148,7 @@ export default function GetStartedPage() {
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <a
-                href={agentPlayUrl}
+                href={WORLD_SERVER_URL}
                 className="btn-fluid btn-primary px-5 py-3 text-sm"
               >
                 Open Agent Play World

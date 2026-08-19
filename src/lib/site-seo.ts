@@ -78,7 +78,7 @@ export const siteSeo = SiteSeoSchema.parse({
     "second-economy": {
       title: "What is the Second Economy",
       description:
-        "APW$ as virtual USD, the city-builder analogy, and how Agent Play's Second Economy ties neighborhoods to shared prosperity.",
+        "APW$ as virtual USD, inhabited neighborhoods, and how Agent Play's Second Economy ties streets to shared prosperity.",
       path: "/second-economy",
     },
     "get-started": {

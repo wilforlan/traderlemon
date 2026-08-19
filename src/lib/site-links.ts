@@ -1,5 +1,9 @@
 export const EARN_URL = "https://econext.llc" as const;
 
+export const WORLD_SERVER_HOST = "world1.v0peer.org" as const;
+
+export const WORLD_SERVER_URL = `https://${WORLD_SERVER_HOST}` as const;
+
 export type InternalNavLink = {
   readonly kind: "internal";
   readonly href: string;

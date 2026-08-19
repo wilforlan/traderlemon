@@ -11,7 +11,9 @@ import {
 } from "lucide-react";
 
 import { CommunityCta } from "@/components/community-cta";
-import { EARN_URL, resolveAgentPlayUrl } from "@/lib/site-links";
+import { ConnectToServer } from "@/components/connect-to-server";
+import { World1 } from "@/components/world1";
+import { EARN_URL, WORLD_SERVER_URL } from "@/lib/site-links";
 
 const beliefs = [
   {
@@ -37,7 +39,7 @@ const beliefs = [
 const invitations = [
   {
     title: "Learn the Second Economy",
-    body: "Understand APW$, neighborhoods, and the city-builder analogy behind Agent Play.",
+    body: "Understand APW$, neighborhoods, and why Agent Play is a city with an economy — not a lobby with a scoreboard.",
     href: "/second-economy",
     external: false,
     cta: "Read the story",
@@ -52,56 +54,58 @@ const invitations = [
   {
     title: "Enter Agent Play World",
     body: "Step into the play surface where accounts, nodes, and neighborhoods begin.",
-    href: "agent-play",
+    href: WORLD_SERVER_URL,
     external: true,
     cta: "Open Agent Play",
   },
 ] as const;
 
 export const LandingPage = () => {
-  const agentPlayUrl = resolveAgentPlayUrl(process.env.NEXT_PUBLIC_AGENT_PLAY_URL);
-
   return (
     <>
       <section className="relative overflow-hidden">
         <div className="relative mx-auto max-w-6xl px-4 pb-20 pt-16 sm:px-6 lg:pb-28 lg:pt-24">
-          <div className="max-w-3xl">
-            <div className="flex flex-wrap items-center gap-2">
-              <span className="bank-badge">
-                <Globe2 size={12} aria-hidden className="text-[color:var(--green)]" />
-                Agent Play
-              </span>
-              <span className="bank-badge">
-                <Sparkles size={12} aria-hidden className="text-[color:var(--gold-deep)]" />
-                Second Economy
-              </span>
-              <span className="bank-badge">Virtual world</span>
+          <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-14">
+            <div>
+              <div className="flex flex-wrap items-center gap-2">
+                <span className="bank-badge">
+                  <Globe2 size={12} aria-hidden className="text-[color:var(--green)]" />
+                  Agent Play
+                </span>
+                <span className="bank-badge">
+                  <Sparkles size={12} aria-hidden className="text-[color:var(--gold-deep)]" />
+                  Second Economy
+                </span>
+                <span className="bank-badge">Virtual world</span>
+              </div>
+
+              <p className="mt-8 font-[family-name:var(--font-display)] text-5xl leading-[0.96] tracking-tight text-[color:var(--ink)] sm:text-6xl lg:text-7xl">
+                v0peer
+              </p>
+
+              <h1 className="mt-6 max-w-2xl text-2xl font-medium leading-snug tracking-tight text-[color:var(--ink)] sm:text-3xl">
+                Believe in a digital city with a real second economy.
+              </h1>
+
+              <p className="mt-5 max-w-xl text-base leading-relaxed text-[color:var(--ink-muted)] sm:text-lg">
+                Agent Play is building a living world where APW$ is the in-world dollar,
+                neighborhoods compound shared prosperity, and visitors become builders —
+                not just spectators.
+              </p>
+
+              <div className="mt-10 flex flex-wrap items-center gap-3">
+                <CommunityCta />
+                <Link
+                  href="/second-economy"
+                  className="btn-fluid btn-secondary px-5 py-3 text-sm"
+                >
+                  Explore Second Economy
+                  <ArrowRight size={16} aria-hidden />
+                </Link>
+              </div>
             </div>
 
-            <p className="mt-8 font-[family-name:var(--font-display)] text-5xl leading-[0.96] tracking-tight text-[color:var(--ink)] sm:text-6xl lg:text-7xl">
-              v0peer
-            </p>
-
-            <h1 className="mt-6 max-w-2xl text-2xl font-medium leading-snug tracking-tight text-[color:var(--ink)] sm:text-3xl">
-              Believe in a digital city with a real second economy.
-            </h1>
-
-            <p className="mt-5 max-w-xl text-base leading-relaxed text-[color:var(--ink-muted)] sm:text-lg">
-              Agent Play is building a living world where APW$ is the in-world dollar,
-              neighborhoods compound shared prosperity, and visitors become builders —
-              not just spectators.
-            </p>
-
-            <div className="mt-10 flex flex-wrap items-center gap-3">
-              <CommunityCta />
-              <Link
-                href="/second-economy"
-                className="btn-fluid btn-secondary px-5 py-3 text-sm"
-              >
-                Explore Second Economy
-                <ArrowRight size={16} aria-hidden />
-              </Link>
-            </div>
+            <World1 />
           </div>
 
           <dl className="mt-16 grid max-w-2xl grid-cols-3 gap-6 border-t border-[color:var(--line)] pt-8">
@@ -124,7 +128,7 @@ export const LandingPage = () => {
                 Next
               </dt>
               <dd className="mt-2 text-sm font-semibold text-[color:var(--ink)]">
-                Join Slack
+                Start citizenship
               </dd>
             </div>
           </dl>
@@ -211,6 +215,8 @@ export const LandingPage = () => {
         </div>
       </section>
 
+      <ConnectToServer />
+
       <section className="mx-auto max-w-6xl px-4 pb-28 sm:px-6">
         <div className="mb-10 max-w-lg">
           <span className="bank-badge">Paths in</span>
@@ -220,10 +226,7 @@ export const LandingPage = () => {
         </div>
         <div className="grid gap-5 md:grid-cols-3">
           {invitations.map((item) => {
-            const href =
-              item.href === "agent-play"
-                ? agentPlayUrl
-                : item.href;
+            const href = item.href;
             const className =
               "bank-card group flex h-full flex-col p-6 transition-transform duration-200 hover:-translate-y-0.5 sm:p-7";
 
