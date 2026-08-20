@@ -177,7 +177,7 @@ export default function SecondEconomyPage() {
               Join the builders
             </p>
             <h2 className="mt-4 font-[family-name:var(--font-display)] text-3xl tracking-tight text-white sm:text-4xl">
-              If this world feels true to you, come talk in Slack
+              If this world feels true to you, come talk
             </h2>
             <p className="mt-4 text-sm leading-relaxed text-white/90 sm:text-base">
               The Second Economy is being designed in public — with people who want a
