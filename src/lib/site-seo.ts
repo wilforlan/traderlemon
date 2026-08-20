@@ -6,6 +6,10 @@ export const SitePageKeySchema = z.enum([
   "second-economy",
   "get-started",
   "merchant",
+  "support",
+  "app",
+  "privacy",
+  "terms",
 ]);
 export type SitePageKey = z.infer<typeof SitePageKeySchema>;
 
@@ -37,6 +41,10 @@ const SiteSeoSchema = z.object({
     "second-economy": SitePageSeoSchema,
     "get-started": SitePageSeoSchema,
     merchant: SitePageSeoSchema,
+    support: SitePageSeoSchema,
+    app: SitePageSeoSchema,
+    privacy: SitePageSeoSchema,
+    terms: SitePageSeoSchema,
   }),
 });
 
@@ -95,6 +103,30 @@ export const siteSeo = SiteSeoSchema.parse({
       description:
         "Accept APU for goods and services on Agent Play's second economy.",
       path: "/merchant",
+    },
+    support: {
+      title: "Support for the v0peer app",
+      description:
+        "Get help with v0peer: loading Origin, connecting to the live world, and using the app on iPhone and iPad.",
+      path: "/support",
+    },
+    app: {
+      title: "The v0peer app",
+      description:
+        "Load Origin on iPhone and iPad and enter Agent Play's digital city in full screen.",
+      path: "/app",
+    },
+    privacy: {
+      title: "Privacy Policy",
+      description:
+        "How Viroke Technologies Inc. collects, uses, and protects information in v0peer and on v0peer.org.",
+      path: "/privacy",
+    },
+    terms: {
+      title: "Terms of Use",
+      description:
+        "Terms governing the v0peer app and website, operated by Viroke Technologies Inc., a Delaware corporation.",
+      path: "/terms",
     },
   },
 });

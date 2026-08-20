@@ -6,15 +6,18 @@ import {
   Globe2,
   Leaf,
   Map,
+  Smartphone,
   Sparkles,
   Users,
 } from "lucide-react";
 
-import { CommunityCta } from "@/components/community-cta";
+import { AppScreenshots } from "@/components/app-screenshots";
+import { DownloadAppCta } from "@/components/download-app-cta";
 import { ConnectToServer } from "@/components/connect-to-server";
 import { SiteLogo } from "@/components/site-logo";
 import { World1 } from "@/components/world1";
-import { EARN_URL, WORLD_SERVER_URL } from "@/lib/site-links";
+import { landingCopy } from "@/lib/landing-copy";
+import { EARN_URL } from "@/lib/site-links";
 
 const beliefs = [
   {
@@ -39,25 +42,22 @@ const beliefs = [
 
 const invitations = [
   {
+    title: landingCopy.downloadApp.label,
+    body: "The official v0peer iPhone and iPad app is coming soon on the App Store.",
+    href: null,
+    cta: landingCopy.downloadApp.status,
+  },
+  {
+    title: landingCopy.continueOnWeb.label,
+    body: "Open Origin in the browser today. Same world, same city — no wait for the store.",
+    href: landingCopy.continueOnWeb.href,
+    cta: landingCopy.continueOnWeb.label,
+  },
+  {
     title: "Learn the Second Economy",
     body: "Understand APW$, neighborhoods, and why Agent Play is a city with an economy — not a lobby with a scoreboard.",
     href: "/second-economy",
-    external: false,
     cta: "Read the story",
-  },
-  {
-    title: "Earn with Econext",
-    body: "Open the banking rails of the Second Economy — balances, conversion, and settlement.",
-    href: EARN_URL,
-    external: true,
-    cta: "Go to Econext",
-  },
-  {
-    title: "Enter Agent Play World",
-    body: "Step into the play surface where accounts, nodes, and neighborhoods begin.",
-    href: WORLD_SERVER_URL,
-    external: true,
-    cta: "Open Agent Play",
   },
 ] as const;
 
@@ -77,7 +77,7 @@ export const LandingPage = () => {
                   <Sparkles size={12} aria-hidden className="text-[color:var(--gold-deep)]" />
                   Second Economy
                 </span>
-                <span className="bank-badge">Virtual world</span>
+                <span className="bank-badge">Coming soon on iOS</span>
               </div>
 
               <div className="mt-8 flex items-center gap-4">
@@ -88,28 +88,28 @@ export const LandingPage = () => {
               </div>
 
               <h1 className="mt-6 max-w-2xl text-2xl font-medium leading-snug tracking-tight text-[color:var(--ink)] sm:text-3xl">
-                Believe in a digital city with a real second economy.
+                {landingCopy.heroHeadline}
               </h1>
 
               <p className="mt-5 max-w-xl text-base leading-relaxed text-[color:var(--ink-muted)] sm:text-lg">
-                Agent Play is building a living world where APW$ is the in-world dollar,
-                neighborhoods compound shared prosperity, and visitors become builders —
-                not just spectators.
+                {landingCopy.heroBody}
               </p>
 
               <div className="mt-10 flex flex-wrap items-center gap-3">
-                <CommunityCta />
-                <Link
-                  href="/second-economy"
+                <DownloadAppCta />
+                <a
+                  href={landingCopy.continueOnWeb.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="btn-fluid btn-secondary px-5 py-3 text-sm"
                 >
-                  Explore Second Economy
+                  {landingCopy.continueOnWeb.label}
                   <ArrowRight size={16} aria-hidden />
-                </Link>
+                </a>
               </div>
             </div>
 
-            <World1 />
+            <AppScreenshots variant="hero" />
           </div>
 
           <dl className="mt-16 grid max-w-2xl grid-cols-3 gap-6 border-t border-[color:var(--line)] pt-8">
@@ -132,11 +132,30 @@ export const LandingPage = () => {
                 Next
               </dt>
               <dd className="mt-2 text-sm font-semibold text-[color:var(--ink)]">
-                Start citizenship
+                {landingCopy.continueOnWeb.label}
               </dd>
             </div>
           </dl>
         </div>
+      </section>
+
+      <section className="mx-auto max-w-6xl px-4 pb-20 sm:px-6">
+        <div className="mb-10 flex flex-wrap items-end justify-between gap-6">
+          <div className="max-w-xl">
+            <span className="bank-badge">
+              <Smartphone size={12} aria-hidden className="text-[color:var(--green)]" />
+              {landingCopy.screenshotSection.badge}
+            </span>
+            <h2 className="mt-5 font-[family-name:var(--font-display)] text-3xl tracking-tight text-[color:var(--ink)] sm:text-4xl">
+              {landingCopy.screenshotSection.headline}
+            </h2>
+            <p className="mt-3 text-sm leading-relaxed text-[color:var(--ink-muted)] sm:text-base">
+              {landingCopy.screenshotSection.body}
+            </p>
+          </div>
+          <DownloadAppCta />
+        </div>
+        <AppScreenshots />
       </section>
 
       <section className="mx-auto max-w-6xl px-4 pb-20 sm:px-6">
@@ -184,38 +203,36 @@ export const LandingPage = () => {
           <div className="max-w-lg">
             <span className="bank-badge">
               <Users size={12} aria-hidden className="text-[color:var(--green)]" />
-              Community first
+              Continue on the web
             </span>
             <h2 className="mt-5 font-[family-name:var(--font-display)] text-3xl tracking-tight text-[color:var(--ink)] sm:text-4xl">
-              The city grows on-chain.
+              The city is already running in the browser.
             </h2>
             <p className="mt-4 text-sm leading-relaxed text-[color:var(--ink-muted)] sm:text-base">
-              Builders, storytellers, merchants, and curious visitors meet in one room.
-              If you believe a virtual world can carry real social and economic weight —
-              start there.
+              Until the App Store listing ships, open Origin on the web. Same
+              streets, same APW$, same invitation to build.
             </p>
-            <div className="mt-8">
-              <CommunityCta />
+            <div className="mt-8 flex flex-wrap gap-3">
+              <a
+                href={landingCopy.continueOnWeb.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-fluid btn-primary px-5 py-3 text-sm"
+              >
+                {landingCopy.continueOnWeb.label}
+                <ArrowRight size={16} aria-hidden />
+              </a>
+              <a
+                href={EARN_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-fluid btn-secondary px-5 py-3 text-sm"
+              >
+                Earn on Econext
+              </a>
             </div>
           </div>
-          <div className="rounded-[1.5rem] border border-[color:var(--line)] bg-[color:var(--mint)]/50 p-6 sm:p-8">
-            <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[color:var(--ink-muted)]">
-              What you will find
-            </p>
-            <ul className="mt-5 space-y-4">
-              {[
-                "Early worldbuilding conversations and neighborhood ideas",
-                "APW$ and Second Economy design walkthroughs",
-                "Calls for creators, merchants, and civic experiments",
-                "A human pace — less hype, more shared construction",
-              ].map((item) => (
-                <li key={item} className="flex gap-3 text-sm leading-relaxed text-[color:var(--ink)]">
-                  <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-[color:var(--green)]" />
-                  {item}
-                </li>
-              ))}
-            </ul>
-          </div>
+          <World1 />
         </div>
       </section>
 
@@ -225,12 +242,11 @@ export const LandingPage = () => {
         <div className="mb-10 max-w-lg">
           <span className="bank-badge">Paths in</span>
           <h2 className="mt-5 font-[family-name:var(--font-display)] text-3xl tracking-tight text-[color:var(--ink)]">
-            Three doors into the Second Economy
+            Download the app, or continue on the web
           </h2>
         </div>
         <div className="grid gap-5 md:grid-cols-3">
           {invitations.map((item) => {
-            const href = item.href;
             const className =
               "bank-card group flex h-full flex-col p-6 transition-transform duration-200 hover:-translate-y-0.5 sm:p-7";
 
@@ -244,16 +260,24 @@ export const LandingPage = () => {
                 </p>
                 <span className="btn-fluid btn-secondary mt-6 self-start px-4 py-2 text-sm">
                   {item.cta}
-                  <ArrowRight size={14} aria-hidden />
+                  {item.href ? <ArrowRight size={14} aria-hidden /> : null}
                 </span>
               </>
             );
 
-            if (item.external) {
+            if (item.href === null) {
+              return (
+                <article key={item.title} className={className}>
+                  {inner}
+                </article>
+              );
+            }
+
+            if (item.href.startsWith("http")) {
               return (
                 <a
                   key={item.title}
-                  href={href}
+                  href={item.href}
                   target="_blank"
                   rel="noopener noreferrer"
                   className={className}
@@ -264,7 +288,7 @@ export const LandingPage = () => {
             }
 
             return (
-              <Link key={item.title} href={href} className={className}>
+              <Link key={item.title} href={item.href} className={className}>
                 {inner}
               </Link>
             );

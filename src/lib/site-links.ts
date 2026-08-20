@@ -4,6 +4,8 @@ export const WORLD_SERVER_HOST = "world1.v0peer.org" as const;
 
 export const WORLD_SERVER_URL = `https://${WORLD_SERVER_HOST}` as const;
 
+export const SUPPORT_EMAIL = "support@v0peer.org" as const;
+
 export type InternalNavLink = {
   readonly kind: "internal";
   readonly href: string;
@@ -21,6 +23,13 @@ export type SiteNavLink = InternalNavLink | ExternalNavLink;
 export const siteNav: readonly SiteNavLink[] = [
   { kind: "internal", href: "/second-economy", label: "Second Economy" },
   { kind: "external", href: EARN_URL, label: "Earn" },
+] as const;
+
+export const storeFooterLinks = [
+  { href: "/app", label: "The app" },
+  { href: "/support", label: "Support" },
+  { href: "/privacy", label: "Privacy" },
+  { href: "/terms", label: "Terms" },
 ] as const;
 
 export const resolveSlackCommunityUrl = (

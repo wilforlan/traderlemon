@@ -2,12 +2,15 @@ import { describe, expect, it } from "vitest";
 
 import {
   EARN_URL,
+  SUPPORT_EMAIL,
   WORLD_SERVER_HOST,
   WORLD_SERVER_URL,
   resolveAgentPlayUrl,
   resolveSlackCommunityUrl,
   siteNav,
+  storeFooterLinks,
 } from "./site-links";
+
 
 describe("v0peer public links", () => {
   it("points Earn at Econext", () => {
@@ -38,4 +41,17 @@ describe("v0peer public links", () => {
     expect(WORLD_SERVER_HOST).toBe("world1.v0peer.org");
     expect(WORLD_SERVER_URL).toBe("https://world1.v0peer.org");
   });
+
+  it("publishes App Store support contact and listing routes", () => {
+    expect(SUPPORT_EMAIL).toBe("support@v0peer.org");
+    expect(storeFooterLinks).toEqual(
+      expect.arrayContaining([
+        { href: "/app", label: "The app" },
+        { href: "/support", label: "Support" },
+        { href: "/privacy", label: "Privacy" },
+        { href: "/terms", label: "Terms" },
+      ]),
+    );
+  });
+
 });

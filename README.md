@@ -27,8 +27,12 @@ Set:
 
 | Path | Purpose |
 |------|---------|
-| `/` | Second Economy landing / belief page |
+| `/` | Second Economy landing — app screenshots, coming-soon download, continue on the web |
 | `/second-economy` | Deep dive: APW$, neighborhoods, shared prosperity |
+| `/app` | Marketing page for the v0peer iPhone and iPad app |
+| `/support` | App Store support URL — contact and Origin help |
+| `/privacy` | Privacy Policy — Viroke Technologies Inc. |
+| `/terms` | Terms of Use — Delaware corporation |
 | Earn (nav) | External → https://econext.llc |
 
 ## Scripts

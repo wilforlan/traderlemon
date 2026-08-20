@@ -74,6 +74,32 @@ describe("v0peer SEO content", () => {
     expect(page.openGraph?.url).toBe("/second-economy");
   });
 
+  it("builds page metadata for App Store support and marketing URLs", () => {
+    const support = buildPageMetadata({ page: "support" });
+    const app = buildPageMetadata({ page: "app" });
+
+    expect(SitePageKeySchema.parse("support")).toBe("support");
+    expect(SitePageKeySchema.parse("app")).toBe("app");
+    expect(support.title).toMatch(/support/i);
+    expect(support.openGraph?.url).toBe("/support");
+    expect(app.title).toMatch(/app/i);
+    expect(app.description).toMatch(/Origin|world/i);
+    expect(app.openGraph?.url).toBe("/app");
+  });
+
+  it("builds page metadata for Privacy Policy and Terms of Use", () => {
+    const privacy = buildPageMetadata({ page: "privacy" });
+    const terms = buildPageMetadata({ page: "terms" });
+
+    expect(SitePageKeySchema.parse("privacy")).toBe("privacy");
+    expect(SitePageKeySchema.parse("terms")).toBe("terms");
+    expect(privacy.title).toMatch(/privacy/i);
+    expect(privacy.openGraph?.url).toBe("/privacy");
+    expect(terms.title).toMatch(/terms/i);
+    expect(terms.openGraph?.url).toBe("/terms");
+  });
+
+
   it("emits website JSON-LD with brand, description, and canonical URL", () => {
     const jsonLd = buildWebsiteJsonLd({
       appUrl: "https://v0peer.example",

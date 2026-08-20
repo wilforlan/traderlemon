@@ -135,3 +135,18 @@ body {
   background: var(--mint);
   color: var(--ink);
 }
+
+.phone-bezel {
+  border-radius: 1.75rem;
+  background: #081a14;
+  padding: 0.42rem;
+  border: 1px solid color-mix(in oklab, var(--gold) 40%, var(--line));
+  box-shadow: var(--shadow-lg);
+}
+
+.phone-bezel img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 1.35rem;
+}
