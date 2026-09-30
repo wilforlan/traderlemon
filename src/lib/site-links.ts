@@ -4,7 +4,7 @@ export const WORLD_SERVER_HOST = "world1.v0peer.org" as const;
 
 export const WORLD_SERVER_URL = `https://${WORLD_SERVER_HOST}` as const;
 
-export const SUPPORT_EMAIL = "support@v0peer.org" as const;
+export const SUPPORT_EMAIL = "williams@viroke.com" as const;
 
 export type InternalNavLink = {
   readonly kind: "internal";
@@ -45,7 +45,7 @@ export const resolveSlackCommunityUrl = (
 export const resolveAgentPlayUrl = (raw: string | undefined): string => {
   const trimmed = raw?.trim();
   if (trimmed === undefined || trimmed.length === 0) {
-    return "https://agentplay.world";
+    return "https://agent-play.com";
   }
   return trimmed;
 };

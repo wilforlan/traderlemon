@@ -34,7 +34,7 @@ describe("v0peer public links", () => {
     expect(resolveAgentPlayUrl(" https://play.example ")).toBe(
       "https://play.example",
     );
-    expect(resolveAgentPlayUrl(undefined)).toBe("https://agentplay.world");
+    expect(resolveAgentPlayUrl(undefined)).toBe("https://agent-play.com");
   });
 
   it("publishes the canonical world server URL", () => {
@@ -43,7 +43,7 @@ describe("v0peer public links", () => {
   });
 
   it("publishes App Store support contact and listing routes", () => {
-    expect(SUPPORT_EMAIL).toBe("support@v0peer.org");
+    expect(SUPPORT_EMAIL).toBe("williams@viroke.com");
     expect(storeFooterLinks).toEqual(
       expect.arrayContaining([
         { href: "/app", label: "The app" },

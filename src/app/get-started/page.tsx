@@ -84,10 +84,12 @@ export default function GetStartedPage() {
                 <ArrowRight size={16} aria-hidden />
               </a>
               <Link
-                href="/#account"
+                href="https://econext.llc/sell-apu"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="btn-fluid btn-secondary px-5 py-3 text-sm"
               >
-                I already have credentials
+                Sell my APU
               </Link>
             </div>
           </div>
@@ -154,10 +156,12 @@ export default function GetStartedPage() {
                 Open Agent Play World
               </a>
               <Link
-                href="/#account"
+                href="https://econext.llc"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="btn-fluid btn-secondary px-5 py-3 text-sm"
               >
-                Upload on v0peer
+                Trade on Econext
               </Link>
             </div>
           </div>

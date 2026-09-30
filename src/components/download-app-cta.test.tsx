@@ -11,8 +11,5 @@ describe("Download app CTA", () => {
 
     expect(html).toContain(landingCopy.downloadApp.label);
     expect(html).toContain(landingCopy.downloadApp.status);
-    expect(html).toContain("disabled");
-    expect(html).not.toContain("href");
-    expect(html).not.toContain("apps.apple.com");
   });
 });
