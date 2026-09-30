@@ -246,7 +246,7 @@ export const LandingPage = () => {
           </h2>
         </div>
         <div className="grid gap-5 md:grid-cols-3">
-          {invitations.map((item) => {
+          {invitations.map((item: { title: string; body: string; href: string; cta: string }) => {
             const className =
               "bank-card group flex h-full flex-col p-6 transition-transform duration-200 hover:-translate-y-0.5 sm:p-7";
 
