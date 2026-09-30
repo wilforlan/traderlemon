@@ -43,8 +43,8 @@ const beliefs = [
 const invitations = [
   {
     title: landingCopy.downloadApp.label,
-    body: "The official v0peer iPhone and iPad app is coming soon on the App Store.",
-    href: null,
+    body: "The official v0peer iPhone and iPad app is available on the App Store.",
+    href: "https://apps.apple.com/us/app/v0peer/id6803333696",
     cta: landingCopy.downloadApp.status,
   },
   {
@@ -77,7 +77,7 @@ export const LandingPage = () => {
                   <Sparkles size={12} aria-hidden className="text-[color:var(--gold-deep)]" />
                   Second Economy
                 </span>
-                <span className="bank-badge">Coming soon on iOS</span>
+                <span className="bank-badge">Download on iOS</span>
               </div>
 
               <div className="mt-8 flex items-center gap-4">
@@ -223,12 +223,12 @@ export const LandingPage = () => {
                 <ArrowRight size={16} aria-hidden />
               </a>
               <a
-                href={EARN_URL}
+                href="https://econext.llc/cash-out"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-fluid btn-secondary px-5 py-3 text-sm"
               >
-                Earn on Econext
+                Cash Out
               </a>
             </div>
           </div>
@@ -246,7 +246,7 @@ export const LandingPage = () => {
           </h2>
         </div>
         <div className="grid gap-5 md:grid-cols-3">
-          {invitations.map((item) => {
+          {invitations.map((item: { title: string; body: string; href: string; cta: string }) => {
             const className =
               "bank-card group flex h-full flex-col p-6 transition-transform duration-200 hover:-translate-y-0.5 sm:p-7";
 

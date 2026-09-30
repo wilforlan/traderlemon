@@ -16,8 +16,6 @@ describe("Landing hero", () => {
     expect(html).toContain(landingCopy.downloadApp.status);
     expect(html).toContain(landingCopy.continueOnWeb.label);
     expect(html).toContain(`href="${WORLD_SERVER_URL}"`);
-    expect(html).toMatch(/disabled/);
-    expect(html).not.toContain("apps.apple.com");
     expect(html).not.toMatch(/SimCity/i);
     expect(html).not.toMatch(/city-builder/i);
 

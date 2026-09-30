@@ -8,7 +8,7 @@ describe("App Store listing pages", () => {
   it("publishes a support route with a reachable contact email", () => {
     expect(storeListing.support.path).toBe("/support");
     expect(storeListing.support.email).toBe(SUPPORT_EMAIL);
-    expect(storeListing.support.email).toBe("support@v0peer.org");
+    expect(storeListing.support.email).toBe("williams@viroke.com");
     expect(storeListing.support.headline).toMatch(/support/i);
     expect(storeListing.support.body).toMatch(/v0peer/i);
     expect(storeListing.support.topics.length).toBeGreaterThanOrEqual(3);
