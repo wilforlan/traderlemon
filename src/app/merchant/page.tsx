@@ -17,7 +17,7 @@ export const metadata: Metadata = buildPageMetadata({ page: "merchant" });
 const pillars = [
   {
     title: "List on the second economy",
-    body: "Merchants accept APU for goods and services that recycle spend through Agent Play neighborhoods — cafés, studios, civic stalls, and creator desks.",
+    body: "Merchants accept APU for goods and services that recycle spend through v0peer neighborhoods — cafés, studios, civic stalls, and creator desks.",
     tag: "Neighborhoods",
     icon: MapPinned,
   },
@@ -35,7 +35,7 @@ const pillars = [
   },
   {
     title: "Earn trust with credentials",
-    body: "Merchant onboarding uses the same Agent Play World credentials model. Prove your node, keep the file safe, and operate under one identity.",
+    body: "Merchant onboarding uses the same v0peer World credentials model. Prove your node, keep the file safe, and operate under one identity.",
     tag: "Identity",
     icon: BadgeCheck,
   },
@@ -43,8 +43,8 @@ const pillars = [
 
 const howTo = [
   {
-    title: "Create your Agent Play account",
-    body: "Create or recover your Agent Play World account and save credentials.json.",
+    title: "Create your v0peer account",
+    body: "Create or recover your v0peer World account and save credentials.json.",
   },
   {
     title: "Connect on v0peer",
@@ -90,7 +90,7 @@ export default function MerchantPage() {
                 href="/get-started"
                 className="btn-fluid btn-primary px-5 py-3 text-sm"
               >
-                Start with an Agent Play account
+                Start with a v0peer account
                 <ArrowRight size={16} aria-hidden />
               </Link>
               <Link

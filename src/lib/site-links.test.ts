@@ -3,6 +3,7 @@ import { describe, expect, it } from "vitest";
 import {
   EARN_URL,
   SUPPORT_EMAIL,
+  WORLD2_URL,
   WORLD_SERVER_HOST,
   WORLD_SERVER_URL,
   resolveAgentPlayUrl,
@@ -40,6 +41,10 @@ describe("v0peer public links", () => {
   it("publishes the canonical world server URL", () => {
     expect(WORLD_SERVER_HOST).toBe("world1.v0peer.org");
     expect(WORLD_SERVER_URL).toBe("https://world1.v0peer.org");
+  });
+
+  it("publishes World 2 as its own page origin", () => {
+    expect(WORLD2_URL).toBe("https://world2.v0peer.org");
   });
 
   it("publishes App Store support contact and listing routes", () => {

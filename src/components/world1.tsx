@@ -14,7 +14,7 @@ export const World1 = () => {
       <div className="aspect-[4/3] bg-[color:var(--mint)]">
         <iframe
           src={WORLD_SERVER_URL}
-          title="Agent Play World 1"
+          title="v0peer World 1"
           className="h-full w-full border-0"
           loading="lazy"
           allow="microphone; autoplay; fullscreen; speaker-selection"

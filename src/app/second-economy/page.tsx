@@ -27,7 +27,7 @@ const layers = [
   },
   {
     title: "APW$ — the virtual USD",
-    body: "APW$ is Agent Play's in-world nominal dollar. It is how the city prices work, goods, and grants without pretending every click is a speculative trade.",
+    body: "APW$ is v0peer's in-world nominal dollar. It is how the city prices work, goods, and grants without pretending every click is a speculative trade.",
     icon: Coins,
     tag: "APW$",
   },
@@ -85,7 +85,7 @@ export default function SecondEconomyPage() {
               The Second Economy is the city beneath the game
             </h1>
             <p className="mt-5 max-w-xl text-base leading-relaxed text-[color:var(--ink-muted)] sm:text-lg">
-              Agent Play is building a virtual world with an economic nervous system —
+              v0peer is building a virtual world with an economic nervous system —
               APW$ as the in-world dollar, neighborhoods as the stage, and shared
               prosperity as the point.
             </p>

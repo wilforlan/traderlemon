@@ -4,6 +4,8 @@ export const WORLD_SERVER_HOST = "world1.v0peer.org" as const;
 
 export const WORLD_SERVER_URL = `https://${WORLD_SERVER_HOST}` as const;
 
+export const WORLD2_URL = "https://world2.v0peer.org" as const;
+
 export const SUPPORT_EMAIL = "williams@viroke.com" as const;
 
 export type InternalNavLink = {

@@ -99,12 +99,12 @@ export default function SupportPage() {
             <li className="flex gap-3 rounded-2xl border border-[color:var(--line)] bg-[color:var(--surface-soft)] px-4 py-4 shadow-[var(--shadow-sm)]">
               <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-[color:var(--green)]" />
               <span className="text-sm leading-relaxed text-[color:var(--ink-muted)]">
-                New to Agent Play? Start with an account, then return to v0peer.{" "}
+                New to v0peer? Start with an account, then come back to the app.{" "}
                 <Link
                   href="/get-started"
                   className="font-semibold text-[color:var(--green)]"
                 >
-                  Create an Agent Play World account
+                  Create a v0peer World account
                 </Link>
                 .
               </span>

@@ -18,8 +18,8 @@ export const metadata: Metadata = buildPageMetadata({ page: "get-started" });
 
 const steps = [
   {
-    title: "Open Agent Play World",
-    body: "Create or enter your Agent Play World account on world1.v0peer.org. That account is your node identity across the second economy.",
+    title: "Open v0peer World",
+    body: "Create or enter your v0peer World account on world1.v0peer.org. That account is your node identity across the second economy.",
     tag: "Identity",
     icon: Download,
   },
@@ -68,7 +68,7 @@ export default function GetStartedPage() {
             </div>
 
             <h1 className="mt-8 font-[family-name:var(--font-display)] text-4xl leading-[1.05] tracking-tight text-[color:var(--ink)] sm:text-5xl lg:text-6xl">
-              Create your Agent Play World account
+              Create your v0peer World account
             </h1>
             <p className="mt-5 max-w-xl text-base leading-relaxed text-[color:var(--ink-muted)] sm:text-lg">
               Authentication on v0peer is credentials-file based. There is no password
@@ -80,7 +80,7 @@ export default function GetStartedPage() {
                 href={WORLD_SERVER_URL}
                 className="btn-fluid btn-primary px-5 py-3 text-sm"
               >
-                Open Agent Play World
+                Open v0peer World
                 <ArrowRight size={16} aria-hidden />
               </a>
               <Link
@@ -153,7 +153,7 @@ export default function GetStartedPage() {
                 href={WORLD_SERVER_URL}
                 className="btn-fluid btn-primary px-5 py-3 text-sm"
               >
-                Open Agent Play World
+                Open v0peer World
               </a>
               <Link
                 href="https://econext.llc"

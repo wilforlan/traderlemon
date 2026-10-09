@@ -1,6 +1,6 @@
 # v0peer
 
-Public site for the **Agent Play Second Economy** — vision, APW$, and community. The primary call to action is joining the Slack community; **Earn** links to [Econext](https://econext.llc).
+Public site for the **v0peer Second Economy** — vision, APW$, and community. The primary call to action is joining the Slack community; **Earn** links to [Econext](https://econext.llc).
 
 ## Stack
 
@@ -20,7 +20,7 @@ Set:
 
 - `NEXT_PUBLIC_APP_URL` — canonical site origin
 - `NEXT_PUBLIC_SLACK_COMMUNITY_URL` — Slack invite link (enables Join Slack)
-- `NEXT_PUBLIC_AGENT_PLAY_URL` — Agent Play World entry URL
+- `NEXT_PUBLIC_AGENT_PLAY_URL` — v0peer World entry URL
 - World server (CLI / credentials `serverUrl`): `https://world1.v0peer.org`
 
 ## Routes
