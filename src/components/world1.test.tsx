@@ -10,7 +10,7 @@ describe("World 1 preview", () => {
     const html = renderToStaticMarkup(<World1 />);
 
     expect(html).toContain(`src="${WORLD_SERVER_URL}"`);
-    expect(html).toContain('title="Agent Play World 1"');
+    expect(html).toContain('title="v0peer World 1"');
     expect(html).toContain(WORLD_SERVER_HOST);
     expect(html).toContain(
       'allow="microphone; autoplay; fullscreen; speaker-selection"',

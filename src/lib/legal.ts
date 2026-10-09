@@ -46,7 +46,7 @@ export const privacyPolicy = LegalDocumentSchema.parse({
       heading: "2. Scope",
       paragraphs: [
         "This Policy applies to information processed through the v0peer iOS and iPadOS application (bundle identifier org.v0peer.app), the v0peer marketing and support website, and communications you send us (for example, email to support).",
-        `This Policy does not govern third-party worlds, banks, or play surfaces that we do not control. When you tap Load, the app opens Origin at ${WORLD_SERVER_URL} inside an in-app WebView. That world, Econext, Agent Play World, Apple, and other independent operators have their own terms and privacy practices.`,
+        `This Policy does not govern third-party worlds, banks, or play surfaces that we do not control. When you tap Load, the app opens Origin at ${WORLD_SERVER_URL} inside an in-app WebView. That world, Econext, v0peer World, Apple, and other independent operators have their own terms and privacy practices.`,
       ],
     },
     {
@@ -69,7 +69,7 @@ export const privacyPolicy = LegalDocumentSchema.parse({
       heading: "5. Origin and other third-party worlds",
       paragraphs: [
         `When Origin loads, the WebView connects directly to ${WORLD_SERVER_URL}. That destination may set cookies, use local storage, run JavaScript, collect account or session data, and process content according to its own policy. Shared and third-party cookies may be enabled in the WebView so the live world can function.`,
-        "Viroke does not receive a complete copy of everything the world processes. If you create an Agent Play World account, save credentials.json, or use Econext banking rails, those operators—not the native v0peer shell—are the primary controllers of that information. Read their notices before you authenticate or transact.",
+        "Viroke does not receive a complete copy of everything the world processes. If you create a v0peer World account, save credentials.json, or use Econext banking rails, those operators—not the native v0peer shell—are the primary controllers of that information. Read their notices before you authenticate or transact.",
       ],
     },
     {
@@ -156,7 +156,7 @@ export const termsOfUse = LegalDocumentSchema.parse({
     {
       heading: "1. The Service",
       paragraphs: [
-        "v0peer is a client that loads live Agent Play worlds. After a splash screen, you may load Origin, which occupies the full display inside an in-app WebView. Shake the device to open options to reload, exit the world without closing the app, or stay.",
+        "v0peer is a client that loads live v0peer worlds. After a splash screen, you may load Origin, which occupies the full display inside an in-app WebView. Shake the device to open options to reload, exit the world without closing the app, or stay.",
         `Origin is served from ${WORLD_SERVER_URL}. The native shell and the world are related but distinct. Features, accounts, chat, economy, and content inside Origin are provided by the world operator and may change without notice.`,
         "We may modify, suspend, or discontinue any part of the Service. The iOS app may be listed as coming soon on the App Store until Apple completes review.",
       ],
@@ -178,7 +178,7 @@ export const termsOfUse = LegalDocumentSchema.parse({
     {
       heading: "4. Credentials and keys",
       paragraphs: [
-        "Agent Play World citizenship uses a credentials file (credentials.json) and related secrets. That file is a bearer instrument. Anyone who holds it can act as that node. Viroke does not store a copy in a first-party password database and cannot reset or reconstruct a lost file.",
+        "v0peer World citizenship uses a credentials file (credentials.json) and related secrets. That file is a bearer instrument. Anyone who holds it can act as that node. Viroke does not store a copy in a first-party password database and cannot reset or reconstruct a lost file.",
         "You are solely responsible for generating, storing, backing up, and withholding credentials, passphrases, and wallets. Sharing the file, pasting it into a ticket, or storing it in an untrusted location is at your risk.",
       ],
     },
@@ -192,7 +192,7 @@ export const termsOfUse = LegalDocumentSchema.parse({
     {
       heading: "6. Third-party services",
       paragraphs: [
-        "The Service may link to or embed Origin, Econext, Agent Play World, Apple, hosting providers, and other third parties. Those services are not under our control. Your use of them is at your risk and subject to their terms. Viroke is not a bank, broker-dealer, money transmitter, or fiduciary by reason of linking to those surfaces.",
+        "The Service may link to or embed Origin, Econext, v0peer World, Apple, hosting providers, and other third parties. Those services are not under our control. Your use of them is at your risk and subject to their terms. Viroke is not a bank, broker-dealer, money transmitter, or fiduciary by reason of linking to those surfaces.",
       ],
     },
     {

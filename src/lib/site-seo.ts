@@ -52,16 +52,15 @@ export const siteSeo = SiteSeoSchema.parse({
   brandName: "v0peer",
   defaultTitle: "v0peer — The city grows on-chain",
   defaultDescription:
-    "v0peer is Agent Play's digital city. APW$ is the in-world dollar of a Second Economy that grows on-chain.",
+    "v0peer is a digital city. APW$ is the in-world dollar of a Second Economy that grows on-chain.",
   openGraphTitle: "v0peer — The city grows on-chain.",
   openGraphDescription:
-    "APW$ powers Agent Play's Second Economy. A digital city that grows on-chain.",
+    "APW$ powers v0peer's Second Economy. A digital city that grows on-chain.",
   twitterTitle: "The city grows on-chain.",
   twitterDescription:
-    "APW$ powers Agent Play's Second Economy. A digital city that grows on-chain.",
+    "APW$ powers v0peer's Second Economy. A digital city that grows on-chain.",
   keywords: [
     "v0peer",
-    "Agent Play",
     "Second Economy",
     "APW$",
     "on-chain",
@@ -83,25 +82,25 @@ export const siteSeo = SiteSeoSchema.parse({
     home: {
       title: "The city grows on-chain.",
       description:
-        "v0peer is Agent Play's digital city. APW$ is the in-world dollar of a Second Economy that grows on-chain.",
+        "v0peer is a digital city. APW$ is the in-world dollar of a Second Economy that grows on-chain.",
       path: "/",
     },
     "second-economy": {
       title: "What is the Second Economy",
       description:
-        "APW$ as virtual USD, inhabited neighborhoods, and how Agent Play's Second Economy ties streets to shared prosperity.",
+        "APW$ as virtual USD, inhabited neighborhoods, and how v0peer's Second Economy ties streets to shared prosperity.",
       path: "/second-economy",
     },
     "get-started": {
-      title: "Create an Agent Play World account",
+      title: "Create a v0peer World account",
       description:
-        "Create an Agent Play World account, save credentials.json, and connect safely on v0peer.",
+        "Create a v0peer World account, save credentials.json, and connect safely on v0peer.",
       path: "/get-started",
     },
     merchant: {
       title: "Become an APU merchant",
       description:
-        "Accept APU for goods and services on Agent Play's second economy.",
+        "Accept APU for goods and services on v0peer's second economy.",
       path: "/merchant",
     },
     support: {
@@ -113,7 +112,7 @@ export const siteSeo = SiteSeoSchema.parse({
     app: {
       title: "The v0peer app",
       description:
-        "Load Origin on iPhone and iPad and enter Agent Play's digital city in full screen.",
+        "Load Origin on iPhone and iPad and enter v0peer's digital city in full screen.",
       path: "/app",
     },
     privacy: {

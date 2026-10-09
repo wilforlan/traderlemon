@@ -17,14 +17,14 @@ export const storeListing = {
       },
       {
         title: "Accounts and credentials",
-        body: "Citizenship uses a credentials file, not a password reset email. If you lost credentials.json, we cannot reconstruct the file. Create a new Agent Play World account and keep the download offline.",
+        body: "Citizenship uses a credentials file, not a password reset email. If you lost credentials.json, we cannot reconstruct the file. Create a new v0peer World account and keep the download offline.",
       },
     ],
   },
   marketing: {
     path: "/app",
     headline: "The v0peer app",
-    body: `v0peer is the official iPhone and iPad app for Agent Play's digital city. Load Origin and enter the live world at ${WORLD_SERVER_URL} in full screen.`,
+    body: `v0peer is the official iPhone and iPad app for the digital city. Load Origin and enter the live world at ${WORLD_SERVER_URL} in full screen.`,
     features: [
       {
         title: "Load Origin",

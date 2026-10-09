@@ -11,6 +11,7 @@ import {
   Users,
 } from "lucide-react";
 
+import { AgentPlayNetwork } from "@/components/agent-play-network";
 import { AppScreenshots } from "@/components/app-screenshots";
 import { DownloadAppCta } from "@/components/download-app-cta";
 import { ConnectToServer } from "@/components/connect-to-server";
@@ -22,7 +23,7 @@ import { EARN_URL } from "@/lib/site-links";
 const beliefs = [
   {
     title: "A city you can feel",
-    body: "Agent Play is not a leaderboard with cosmetics. It is a living digital city — streets, stalls, studios, and civic spaces where people and agents share one economy.",
+    body: "v0peer is not a leaderboard with cosmetics. It is a living digital city — streets, stalls, studios, and civic spaces where people and agents share one economy.",
     icon: Building2,
     tag: "World",
   },
@@ -55,7 +56,7 @@ const invitations = [
   },
   {
     title: "Learn the Second Economy",
-    body: "Understand APW$, neighborhoods, and why Agent Play is a city with an economy — not a lobby with a scoreboard.",
+    body: "Understand APW$, neighborhoods, and why v0peer is a city with an economy — not a lobby with a scoreboard.",
     href: "/second-economy",
     cta: "Read the story",
   },
@@ -71,7 +72,7 @@ export const LandingPage = () => {
               <div className="flex flex-wrap items-center gap-2">
                 <span className="bank-badge">
                   <Globe2 size={12} aria-hidden className="text-[color:var(--green)]" />
-                  Agent Play
+                  v0peer
                 </span>
                 <span className="bank-badge">
                   <Sparkles size={12} aria-hidden className="text-[color:var(--gold-deep)]" />
@@ -96,7 +97,15 @@ export const LandingPage = () => {
               </p>
 
               <div className="mt-10 flex flex-wrap items-center gap-3">
-                <DownloadAppCta />
+                <a
+                  href={landingCopy.readOurStory.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn-fluid btn-primary px-5 py-3 text-sm"
+                >
+                  {landingCopy.readOurStory.label}
+                  <ArrowRight size={16} aria-hidden />
+                </a>
                 <a
                   href={landingCopy.continueOnWeb.href}
                   target="_blank"
@@ -109,7 +118,7 @@ export const LandingPage = () => {
               </div>
             </div>
 
-            <AppScreenshots variant="hero" />
+            <AgentPlayNetwork />
           </div>
 
           <dl className="mt-16 grid max-w-2xl grid-cols-3 gap-6 border-t border-[color:var(--line)] pt-8">
@@ -132,14 +141,60 @@ export const LandingPage = () => {
                 Next
               </dt>
               <dd className="mt-2 text-sm font-semibold text-[color:var(--ink)]">
-                {landingCopy.continueOnWeb.label}
+                {landingCopy.heroNext}
               </dd>
             </div>
           </dl>
         </div>
       </section>
 
-      <section className="mx-auto max-w-6xl px-4 pb-20 sm:px-6">
+      <section className="mx-auto max-w-6xl px-4 pb-20 sm:px-6" aria-label="World 2">
+        <div className="mb-10 flex flex-wrap items-end justify-between gap-6">
+          <div className="max-w-xl">
+            <div className="flex flex-wrap items-center gap-2">
+              <span className="bank-badge">
+                <Map size={12} aria-hidden className="text-[color:var(--green)]" />
+                {landingCopy.world2Section.badge}
+              </span>
+              <span className="bank-badge border-[color:var(--gold)] text-[color:var(--gold-deep)]">
+                {landingCopy.world2Section.betaLabel}
+              </span>
+            </div>
+            <p className="mt-4 max-w-xl text-sm leading-relaxed text-[color:var(--ink-muted)] sm:text-base">
+              {landingCopy.world2Section.betaNote}
+            </p>
+            <h2 className="mt-5 font-[family-name:var(--font-display)] text-3xl tracking-tight text-[color:var(--ink)] sm:text-4xl">
+              {landingCopy.world2Section.headline}
+            </h2>
+            <p className="mt-3 text-sm leading-relaxed text-[color:var(--ink-muted)] sm:text-base">
+              {landingCopy.world2Section.body}
+            </p>
+          </div>
+          <a
+            href={landingCopy.world2Section.ctaHref}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn-fluid btn-primary px-5 py-3 text-sm"
+          >
+            {landingCopy.world2Section.ctaLabel}
+            <ArrowRight size={16} aria-hidden />
+          </a>
+        </div>
+        <div className="grid gap-5 md:grid-cols-3">
+          {landingCopy.world2Section.expectations.map((expectation) => (
+            <article key={expectation.title} className="bank-card p-6 sm:p-7">
+              <h3 className="text-xl font-semibold tracking-tight text-[color:var(--ink)]">
+                {expectation.title}
+              </h3>
+              <p className="mt-2 text-sm leading-relaxed text-[color:var(--ink-muted)]">
+                {expectation.body}
+              </p>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-6xl px-4 pb-20 sm:px-6" aria-label="The app">
         <div className="mb-10 flex flex-wrap items-end justify-between gap-6">
           <div className="max-w-xl">
             <span className="bank-badge">
@@ -168,7 +223,7 @@ export const LandingPage = () => {
             A world worth joining — not just watching
           </h2>
           <p className="mt-3 text-sm leading-relaxed text-[color:var(--ink-muted)] sm:text-base">
-            The Second Economy is the belief layer of Agent Play: prices, places, and
+            The Second Economy is the belief layer of v0peer: prices, places, and
             people bound together in one city-scale loop.
           </p>
         </div>

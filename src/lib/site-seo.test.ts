@@ -54,7 +54,7 @@ describe("v0peer SEO content", () => {
     expect(metadata.openGraph?.title).toBe(siteSeo.openGraphTitle);
     expect(metadata.openGraph?.description).toBe(siteSeo.openGraphDescription);
     expect(metadata.keywords).toEqual(
-      expect.arrayContaining(["Second Economy", "APW$", "Agent Play", "v0peer"]),
+      expect.arrayContaining(["Second Economy", "APW$", "v0peer"]),
     );
     expect(metadata.icons).toEqual(
       expect.objectContaining({

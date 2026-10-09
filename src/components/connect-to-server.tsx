@@ -15,7 +15,7 @@ export const ConnectToServer = () => {
             Point your node at World 1
           </h2>
           <p className="mt-4 text-sm leading-relaxed text-[color:var(--ink-muted)] sm:text-base">
-            Use this server URL in the Agent Play CLI, in credentials.json as
+            Use this server URL in the v0peer CLI, in credentials.json as
             serverUrl, and when initializing a host. It is the live world
             endpoint for v0peer.
           </p>
