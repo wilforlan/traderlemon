@@ -22,8 +22,11 @@ export type ExternalNavLink = {
 
 export type SiteNavLink = InternalNavLink | ExternalNavLink;
 
+export const CITIZENSHIP_BROCHURE_PATH = "/v0peer-citizenship.pdf" as const;
+
 export const siteNav: readonly SiteNavLink[] = [
   { kind: "internal", href: "/second-economy", label: "Second Economy" },
+  { kind: "internal", href: "/citizenship", label: "Citizenship" },
   { kind: "external", href: EARN_URL, label: "Earn" },
 ] as const;
 

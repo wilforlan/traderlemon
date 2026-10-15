@@ -11,5 +11,6 @@ describe("sitemap", () => {
     expect(urls.some((url) => url.endsWith("/app"))).toBe(true);
     expect(urls.some((url) => url.endsWith("/privacy"))).toBe(true);
     expect(urls.some((url) => url.endsWith("/terms"))).toBe(true);
+    expect(urls.some((url) => url.endsWith("/citizenship"))).toBe(true);
   });
 });

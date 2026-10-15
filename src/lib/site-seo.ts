@@ -4,6 +4,7 @@ import { z } from "zod";
 export const SitePageKeySchema = z.enum([
   "home",
   "second-economy",
+  "citizenship",
   "get-started",
   "merchant",
   "support",
@@ -39,6 +40,7 @@ const SiteSeoSchema = z.object({
   pages: z.object({
     home: SitePageSeoSchema,
     "second-economy": SitePageSeoSchema,
+    citizenship: SitePageSeoSchema,
     "get-started": SitePageSeoSchema,
     merchant: SitePageSeoSchema,
     support: SitePageSeoSchema,
@@ -90,6 +92,12 @@ export const siteSeo = SiteSeoSchema.parse({
       description:
         "APW$ as virtual USD, inhabited neighborhoods, and how v0peer's Second Economy ties streets to shared prosperity.",
       path: "/second-economy",
+    },
+    citizenship: {
+      title: "What is Citizenship",
+      description:
+        "How a person lives in v0peer's Second Economy, and why credentials.json is a private visa.",
+      path: "/citizenship",
     },
     "get-started": {
       title: "Create a v0peer World account",

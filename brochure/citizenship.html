@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>v0peer Citizenship</title>
+  <style>
+    @page { size: A4; margin: 12mm; }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; }
+    body {
+      font-family: "Iowan Old Style", Palatino, "Palatino Linotype", Georgia, serif;
+      color: #14202b;
+      background: #f7f3ea;
+    }
+    h1, h2, h3, p { margin: 0; }
+    .sheet {
+      break-after: page;
+      min-height: 257mm;
+      padding: 8mm 4mm 0;
+      display: flex;
+      flex-direction: column;
+      gap: 6mm;
+    }
+    .sheet:last-child { break-after: auto; }
+    .kicker {
+      font-family: "Avenir Next", "Segoe UI", sans-serif;
+      font-size: 11px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: #1f6b45;
+      font-weight: 700;
+    }
+    h1 { font-size: 42px; line-height: 0.95; letter-spacing: -0.03em; }
+    h2 { font-size: 28px; line-height: 1.05; letter-spacing: -0.02em; }
+    h3 { font-size: 16px; }
+    .lead { font-size: 15px; line-height: 1.45; max-width: 150mm; }
+    .sans { font-family: "Avenir Next", "Segoe UI", sans-serif; }
+    .row { display: flex; gap: 4mm; }
+    .card {
+      flex: 1;
+      border: 1px solid #14202b;
+      border-radius: 4mm;
+      padding: 4mm;
+      background: #fffdf8;
+    }
+    .card strong { display: block; font-size: 18px; margin: 1mm 0; }
+    .card p, .note, li { font-size: 12.5px; line-height: 1.4; }
+    ol, ul { margin: 0; padding-left: 5mm; }
+    li { margin: 1.2mm 0; }
+    .flow {
+      display: flex;
+      align-items: stretch;
+      gap: 2mm;
+    }
+    .node {
+      flex: 1;
+      border: 1.5px solid #14202b;
+      border-radius: 3mm;
+      padding: 3mm;
+      background: #fff;
+      min-height: 28mm;
+    }
+    .node b { display: block; font-family: "Avenir Next", "Segoe UI", sans-serif; font-size: 12px; }
+    .node span { display: block; margin-top: 1.5mm; font-size: 11.5px; line-height: 1.35; }
+    .arrow {
+      align-self: center;
+      font-family: "Avenir Next", "Segoe UI", sans-serif;
+      font-weight: 700;
+      color: #1f6b45;
+    }
+    table { width: 100%; border-collapse: collapse; background: #fff; }
+    th, td { border: 1px solid #14202b; padding: 2.2mm 3mm; text-align: left; font-size: 12px; }
+    th { background: #1f6b45; color: #f7f3ea; font-family: "Avenir Next", "Segoe UI", sans-serif; }
+    .warn {
+      border: 1.5px solid #8a2b2b;
+      background: #fff6f4;
+      border-radius: 4mm;
+      padding: 4mm;
+    }
+    .warn h3 { color: #8a2b2b; }
+    svg { width: 100%; height: auto; display: block; }
+    .foot {
+      margin-top: auto;
+      font-family: "Avenir Next", "Segoe UI", sans-serif;
+      font-size: 10px;
+      letter-spacing: 0.04em;
+      color: #5c6b76;
+    }
+  </style>
+</head>
+<body>
+  <section class="sheet">
+    <p class="kicker">v0peer · Second Economy</p>
+    <h1>Citizenship</h1>
+    <p class="lead">A person&apos;s guide to the street, the bank, and the stall. Read this before you stamp your papers.</p>
+    <svg viewBox="0 0 640 250" role="img" aria-label="Three desks of citizenship">
+      <defs><marker id="deskArrow" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M0 0 L8 4 L0 8 Z" fill="#1f6b45"/></marker></defs>
+      <rect x="8" y="8" width="190" height="168" rx="16" fill="#fff" stroke="#14202b" stroke-width="2"/>
+      <rect x="224" y="8" width="190" height="168" rx="16" fill="#fff" stroke="#14202b" stroke-width="2"/>
+      <rect x="440" y="8" width="190" height="168" rx="16" fill="#fff" stroke="#14202b" stroke-width="2"/>
+      <text x="103" y="42" text-anchor="middle" font-size="18" font-family="Georgia">Street</text>
+      <text x="319" y="42" text-anchor="middle" font-size="18" font-family="Georgia">Bank</text>
+      <text x="535" y="42" text-anchor="middle" font-size="18" font-family="Georgia">Stall</text>
+      <text x="103" y="68" text-anchor="middle" font-size="12" font-family="Avenir Next, sans-serif" fill="#1f6b45">Agent Play World</text>
+      <text x="319" y="68" text-anchor="middle" font-size="12" font-family="Avenir Next, sans-serif" fill="#1f6b45">Econext</text>
+      <text x="535" y="68" text-anchor="middle" font-size="12" font-family="Avenir Next, sans-serif" fill="#1f6b45">A peer</text>
+      <text x="24" y="104" font-size="13" font-family="Georgia">Walk, play, buy, talk.</text>
+      <text x="240" y="104" font-size="13" font-family="Georgia">Save, bundle, cash out.</text>
+      <text x="456" y="104" font-size="13" font-family="Georgia">Agree a price.</text>
+      <text x="24" y="128" font-size="13" font-family="Georgia">Spend APW$. Earn APU.</text>
+      <text x="240" y="128" font-size="13" font-family="Georgia">0.00029359 SOL / APU.</text>
+      <text x="456" y="128" font-size="13" font-family="Georgia">Both legs, or none.</text>
+      <path d="M198 92 H224" stroke="#1f6b45" stroke-width="2" marker-end="url(#deskArrow)"/>
+      <path d="M414 92 H440" stroke="#1f6b45" stroke-width="2" marker-end="url(#deskArrow)"/>
+      <text x="320" y="214" text-anchor="middle" font-size="15" font-family="Georgia">One passport. Three desks.</text>
+    </svg>
+    <p class="lead">The first economy pays rent and wages. Citizenship starts at the door of this public scene. You are given pocket money. You can leave with a measure that is still yours at the bank and at a friend&apos;s table.</p>
+    <p class="foot">v0peer.org/citizenship · Keep this with your papers</p>
+  </section>
+
+  <section class="sheet">
+    <p class="kicker">The visa</p>
+    <h2>credentials.json is your visa</h2>
+    <p class="lead">The immigration desk gives you one file. That file is how you come back. It is also how someone else could enter as you.</p>
+    <svg viewBox="0 0 640 150" role="img" aria-label="What is inside credentials.json">
+      <rect x="16" y="16" width="608" height="118" rx="14" fill="#fff" stroke="#14202b" stroke-width="2"/>
+      <text x="36" y="48" font-size="16" font-family="Georgia">credentials.json</text>
+      <rect x="36" y="66" width="170" height="46" rx="8" fill="#f7f3ea" stroke="#1f6b45"/>
+      <rect x="222" y="66" width="170" height="46" rx="8" fill="#f7f3ea" stroke="#1f6b45"/>
+      <rect x="408" y="66" width="190" height="46" rx="8" fill="#f7f3ea" stroke="#1f6b45"/>
+      <text x="121" y="86" text-anchor="middle" font-size="12" font-family="Avenir Next, sans-serif">serverUrl</text>
+      <text x="121" y="102" text-anchor="middle" font-size="11" font-family="Georgia">which world</text>
+      <text x="307" y="86" text-anchor="middle" font-size="12" font-family="Avenir Next, sans-serif">nodeId</text>
+      <text x="307" y="102" text-anchor="middle" font-size="11" font-family="Georgia">who you are</text>
+      <text x="503" y="86" text-anchor="middle" font-size="12" font-family="Avenir Next, sans-serif">passw</text>
+      <text x="503" y="102" text-anchor="middle" font-size="11" font-family="Georgia">your recovery key</text>
+    </svg>
+    <div class="warn">
+      <h3>Keep it private. Do not share it with anyone.</h3>
+      <p class="note" style="margin-top:2mm">Anyone who holds the file can act as your node. v0peer does not store a copy and cannot reset a lost file. Do not paste it into chat, email, a support ticket, or a shared drive. Store it offline, or in a password manager only you can open. Upload it only at a desk you opened yourself.</p>
+    </div>
+    <ol>
+      <li>Stand at the World 1 or World 2 immigration desk.</li>
+      <li>Issue new papers, or restore the file you already saved.</li>
+      <li>Download credentials.json before you walk onto the street.</li>
+      <li>Check that you can open the file later, on a device you control.</li>
+      <li>Bring the same file when you return to the bank or the stall.</li>
+    </ol>
+    <p class="foot">A request for a seed phrase is outside this economy.</p>
+  </section>
+
+  <section class="sheet">
+    <p class="kicker">Three monies</p>
+    <h2>Name the money before you spend it</h2>
+    <div class="flow">
+      <div class="node"><b>APW$</b><span>Pocket money. A new wallet opens with $10. Spent on the grounds. Stays in the scene.</span></div>
+      <div class="arrow">→</div>
+      <div class="node"><b>APU</b><span>The measure. Earned when an event counted. Saved, given, bundled, banked, or sold.</span></div>
+      <div class="arrow">→</div>
+      <div class="node"><b>SOL</b><span>Outside money. You bring it, a peer pays it, or Econext pays a finished cash-out.</span></div>
+    </div>
+    <svg viewBox="0 0 640 210" role="img" aria-label="How the three monies move">
+      <rect x="20" y="24" width="180" height="70" rx="12" fill="#fff" stroke="#14202b"/>
+      <text x="110" y="52" text-anchor="middle" font-size="14" font-family="Georgia">Opening grant</text>
+      <text x="110" y="74" text-anchor="middle" font-size="12" font-family="Georgia">$10 APW$</text>
+      <path d="M200 59 H250" stroke="#1f6b45" stroke-width="2"/>
+      <rect x="250" y="24" width="160" height="70" rx="12" fill="#e7f4ec" stroke="#1f6b45"/>
+      <text x="330" y="52" text-anchor="middle" font-size="14" font-family="Georgia">A real event</text>
+      <text x="330" y="74" text-anchor="middle" font-size="12" font-family="Georgia">mints APU</text>
+      <path d="M410 59 H460" stroke="#1f6b45" stroke-width="2"/>
+      <rect x="460" y="16" width="160" height="40" rx="10" fill="#fff" stroke="#14202b"/>
+      <text x="540" y="42" text-anchor="middle" font-size="13" font-family="Georgia">Econext</text>
+      <rect x="460" y="68" width="160" height="40" rx="10" fill="#fff" stroke="#14202b"/>
+      <text x="540" y="94" text-anchor="middle" font-size="13" font-family="Georgia">A peer</text>
+      <rect x="20" y="130" width="600" height="60" rx="12" fill="#fff" stroke="#14202b"/>
+      <text x="320" y="155" text-anchor="middle" font-size="14" font-family="Georgia">Bundle: burn APU, receive more APW$</text>
+      <text x="320" y="176" text-anchor="middle" font-size="12" font-family="Georgia">150 → $10 · 300 → $20 · 500 → $50 · 900 → $100</text>
+    </svg>
+    <p class="note">Standing nearby, unread and unpaid, mints nothing. A charge you cannot cover is refused whole. Nobody is credited for the half you could not pay.</p>
+    <p class="foot">APW$ is pocket money on the grounds. It does not withdraw as rent.</p>
+  </section>
+
+  <section class="sheet">
+    <p class="kicker">What a citizen can do</p>
+    <h2>Eight moves, in the order a night uses them</h2>
+    <ol>
+      <li>Enter on one passport. Friends see the same shelf you see.</li>
+      <li>Play. A finished round can pay APU, at least 5 on the first round, inside 100 for the UTC day. Play spends no APW$.</li>
+      <li>Buy. The price leaves in APW$. You receive 3 APU per whole dollar. A $4.99 item pays 12 APU. The shelf shows the item sold.</li>
+      <li>Talk with an agent at $1.50 a minute. You can receive 1 APU per 10 billed seconds, and at most 5 in the sitting.</li>
+      <li>Reach another person who is in reach. You pay. They receive world dollars. No APU is minted.</li>
+      <li>Invite a real account for 25 APU, inside 1,000 in the month. Give at least 10 APU. Smaller gifts are refused whole.</li>
+      <li>Lock Flex, Growth, or Anchor. Interest posts when the term completes. Leave in the first 48 hours and you receive the principal.</li>
+      <li>Release APU from the world purse into the bankable balance, then use Econext or the stall.</li>
+    </ol>
+    <div class="card">
+      <strong>A night you can check</strong>
+      <p>Start at $10 and 0 APU. One billed minute with an agent costs $1.50 and pays 5 APU. A $4.99 purchase pays 12 APU. You hold $3.51 and 17 APU. Those 17 are real. Cash-out starts at 50 APU and about $50 of world dollars.</p>
+    </div>
+    <p class="foot">The purse on your screen is your purse. Accepting a call does not copy anyone else&apos;s wallet onto it.</p>
+  </section>
+
+  <section class="sheet">
+    <p class="kicker">Being with someone</p>
+    <h2>Two kinds of company, two bills</h2>
+    <table>
+      <thead>
+        <tr><th>Who</th><th>You pay</th><th>You receive</th><th>They receive</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Agent, 10 seconds</td><td>$0.25</td><td>1 APU</td><td>APU, on their stock</td></tr>
+        <tr><td>Agent, 1 minute</td><td>$1.50</td><td>5 APU</td><td>APU for the same attendance</td></tr>
+        <tr><td>Person, 1 message</td><td>$0.50</td><td>Nothing in APU</td><td>$0.375</td></tr>
+        <tr><td>Person, 1 second</td><td>$0.85</td><td>Nothing in APU</td><td>$0.6375</td></tr>
+        <tr><td>Person, 1 minute</td><td>$51.00</td><td>Nothing in APU</td><td>$38.25</td></tr>
+      </tbody>
+    </table>
+    <svg viewBox="0 0 640 160" role="img" aria-label="How a human message splits">
+      <rect x="16" y="30" width="140" height="90" rx="12" fill="#14202b"/>
+      <text x="86" y="70" text-anchor="middle" fill="#f7f3ea" font-size="14" font-family="Georgia">You pay</text>
+      <text x="86" y="92" text-anchor="middle" fill="#f7f3ea" font-size="16" font-family="Georgia">$0.50</text>
+      <path d="M164 75 H210" stroke="#1f6b45" stroke-width="2"/>
+      <rect x="214" y="20" width="180" height="70" rx="12" fill="#e7f4ec" stroke="#1f6b45"/>
+      <text x="304" y="50" text-anchor="middle" font-size="13" font-family="Georgia">Other person</text>
+      <text x="304" y="70" text-anchor="middle" font-size="14" font-family="Georgia">75% · $0.375</text>
+      <rect x="214" y="100" width="180" height="46" rx="12" fill="#fff6f4" stroke="#8a2b2b"/>
+      <text x="304" y="128" text-anchor="middle" font-size="13" font-family="Georgia">Office 25% · $0.125</text>
+      <text x="430" y="80" font-size="13" font-family="Georgia">One second of voice</text>
+      <text x="430" y="100" font-size="13" font-family="Georgia">splits the same way</text>
+      <text x="430" y="120" font-size="13" font-family="Georgia">at $0.85.</text>
+    </svg>
+    <p class="note">A declined or missed ring costs nothing. If you cannot cover the next second, the call ends. The office wallet cannot walk or be called. It only receives the levy.</p>
+    <p class="foot">Agent time records a measure. Human time pays a person.</p>
+  </section>
+
+  <section class="sheet">
+    <p class="kicker">Charges</p>
+    <h2>A tax on the transaction, taken when it happens</h2>
+    <div class="row">
+      <article class="card">
+        <strong>25 percent</strong>
+        <p>Human message or voice. You pay the whole price in APW$. The office keeps a quarter. The other person keeps the rest. The dollars already existed. No new money is printed.</p>
+      </article>
+      <article class="card">
+        <strong>12.5 percent</strong>
+        <p>A settled stall ticket. The buyer pays the quoted SOL. The seller receives 87.5 percent. The treasury receives 12.5 percent, in SOL, in the same office that pays cash-out.</p>
+      </article>
+    </div>
+    <svg viewBox="0 0 640 140" role="img" aria-label="Stall fee split">
+      <rect x="20" y="30" width="600" height="36" rx="8" fill="#1f6b45"/>
+      <rect x="20" y="30" width="525" height="36" rx="8" fill="#14202b"/>
+      <text x="250" y="53" text-anchor="middle" fill="#f7f3ea" font-size="14" font-family="Georgia">Seller receives 87.5%</text>
+      <text x="575" y="53" text-anchor="middle" fill="#f7f3ea" font-size="12" font-family="Georgia">12.5%</text>
+      <text x="320" y="100" text-anchor="middle" font-size="14" font-family="Georgia">Buyer pays 100% of the quote. The two shares add up to that quote.</text>
+    </svg>
+    <ul>
+      <li>Holdings are left alone. Unbilled time is left alone.</li>
+      <li>A refused message, a missed ring, and a one-legged stall ticket charge nobody.</li>
+      <li>SOL you already hold outside this scene is your own affair. This office does not add a tax to it.</li>
+      <li>Cash-out also subtracts a small disclosed network fee. In the town that fee is 0.000005 SOL. It is a third number, beside the 25 percent and the 12.5 percent.</li>
+    </ul>
+    <p class="foot">The charge is the office&apos;s share of a deal that happened.</p>
+  </section>
+
+  <section class="sheet">
+    <p class="kicker">Rates</p>
+    <h2>Use the rate that belongs to the act</h2>
+    <table>
+      <thead><tr><th>You are about to</th><th>Rate</th></tr></thead>
+      <tbody>
+        <tr><td>Cash out at Econext</td><td>0.00029359 SOL per APU, then the network fee</td></tr>
+        <tr><td>Read the board&apos;s label of one APU</td><td>0.0664875 APW$ per APU</td></tr>
+        <tr><td>Read the board&apos;s label of one SOL</td><td>150 APW$ per SOL</td></tr>
+        <tr><td>Buy pocket money</td><td>150→$10, 300→$20, 500→$50, 900→$100</td></tr>
+        <tr><td>Sell APU to a person</td><td>The price on that ticket. You keep 87.5%</td></tr>
+      </tbody>
+    </table>
+    <svg viewBox="0 0 640 150" role="img" aria-label="The three board quotes are separate">
+      <circle cx="120" cy="70" r="52" fill="#fff" stroke="#14202b" stroke-width="2"/>
+      <circle cx="320" cy="70" r="52" fill="#fff" stroke="#14202b" stroke-width="2"/>
+      <circle cx="520" cy="70" r="52" fill="#fff" stroke="#1f6b45" stroke-width="2"/>
+      <text x="120" y="66" text-anchor="middle" font-size="11" font-family="Avenir Next, sans-serif">SOL / APU</text>
+      <text x="120" y="84" text-anchor="middle" font-size="11" font-family="Georgia">0.00029359</text>
+      <text x="320" y="66" text-anchor="middle" font-size="11" font-family="Avenir Next, sans-serif">APW$ / SOL</text>
+      <text x="320" y="84" text-anchor="middle" font-size="11" font-family="Georgia">150</text>
+      <text x="520" y="66" text-anchor="middle" font-size="11" font-family="Avenir Next, sans-serif">APW$ / APU</text>
+      <text x="520" y="84" text-anchor="middle" font-size="11" font-family="Georgia">0.0664875</text>
+      <text x="320" y="142" text-anchor="middle" font-size="13" font-family="Georgia">0.00029359 × 150 = 0.0440385, which is not 0.0664875.</text>
+    </svg>
+    <p class="note">Fifty APU, the bank minimum, quotes as 0.0146795 SOL before the network fee. The same 50 APU labels as 3.324375 APW$ on the other board line. The label is not a pile of dollars the bank will hand you. A peer price is a fifth number, and a gap between that price and the bank is allowed.</p>
+    <p class="foot">A seller beats the bank after the fee only above about 0.00033553 SOL per APU.</p>
+  </section>
+
+  <section class="sheet">
+    <p class="kicker">Econext and the stall</p>
+    <h2>Two ways out. They do not share a price.</h2>
+    <div class="row">
+      <article class="card">
+        <strong>The bank</strong>
+        <ol>
+          <li>Release APU so it is bankable.</li>
+          <li>Hold at least 50 APU.</li>
+          <li>Show about $50 of world dollars.</li>
+          <li>Accept the quote: 0.00029359 SOL per APU.</li>
+          <li>Wait 7 to 14 business days. The day&apos;s payouts stay within 10 SOL.</li>
+          <li>SOL arrives at the address you connected.</li>
+        </ol>
+      </article>
+      <article class="card">
+        <strong>The stall</strong>
+        <ol>
+          <li>Post an amount of APU and a SOL quote.</li>
+          <li>Those APU sit in escrow until the ask ends.</li>
+          <li>A buyer pays the quote.</li>
+          <li>You receive 87.5 percent. The treasury receives 12.5 percent. The buyer receives the APU.</li>
+          <li>If either leg is missing, every change is zero.</li>
+          <li>Cancel, and the APU returns to you.</li>
+        </ol>
+      </article>
+    </div>
+    <svg viewBox="0 0 640 120" role="img" aria-label="A peer trade completes on both legs">
+      <rect x="20" y="24" width="250" height="72" rx="12" fill="#fff" stroke="#14202b"/>
+      <rect x="370" y="24" width="250" height="72" rx="12" fill="#fff" stroke="#14202b"/>
+      <text x="145" y="52" text-anchor="middle" font-size="14" font-family="Georgia">Seller&apos;s APU</text>
+      <text x="145" y="74" text-anchor="middle" font-size="12" font-family="Georgia">moves only if SOL arrives</text>
+      <text x="495" y="52" text-anchor="middle" font-size="14" font-family="Georgia">Buyer&apos;s SOL</text>
+      <text x="495" y="74" text-anchor="middle" font-size="12" font-family="Georgia">splits only if APU moves</text>
+      <path d="M270 60 H370" stroke="#1f6b45" stroke-width="2"/>
+      <path d="M370 78 H270" stroke="#14202b" stroke-width="2"/>
+    </svg>
+    <p class="note">Jules, in the town, holds $10, so the bank stays dark and he uses the stall. Rex burns 500 APU for $50, then converts 50 APU at the book rate. Both are citizenship. The word on the week — stress, hold, or expand — describes the window. It does not change 0.00029359.</p>
+    <p class="foot">World 1 · https://world1.v0peer.org · World 2 · https://world2.v0peer.org · Guide · https://v0peer.org/citizenship</p>
+  </section>
+</body>
+</html>
