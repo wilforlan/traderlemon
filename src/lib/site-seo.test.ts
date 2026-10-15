@@ -64,6 +64,16 @@ describe("v0peer SEO content", () => {
     );
   });
 
+  it("builds page metadata for Citizenship", () => {
+    const page = buildPageMetadata({ page: "citizenship" });
+
+    expect(SitePageKeySchema.parse("citizenship")).toBe("citizenship");
+    expect(page.title).toMatch(/citizenship/i);
+    expect(page.description).toMatch(/credentials\.json/i);
+    expect(page.description).toMatch(/Second Economy/i);
+    expect(page.openGraph?.url).toBe("/citizenship");
+  });
+
   it("builds page metadata for Second Economy", () => {
     const page = buildPageMetadata({ page: "second-economy" });
 

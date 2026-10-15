@@ -20,6 +20,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.9,
     },
     {
+      url: `${appUrl}${siteSeo.pages.citizenship.path}`,
+      lastModified,
+      changeFrequency: "weekly",
+      priority: 0.9,
+    },
+    {
       url: `${appUrl}${siteSeo.pages.app.path}`,
       lastModified,
       changeFrequency: "weekly",

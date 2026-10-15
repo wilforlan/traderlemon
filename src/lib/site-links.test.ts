@@ -18,6 +18,14 @@ describe("v0peer public links", () => {
     expect(EARN_URL).toBe("https://econext.llc");
   });
 
+  it("exposes Citizenship as an internal route in primary nav", () => {
+    expect(siteNav).toEqual(
+      expect.arrayContaining([
+        { kind: "internal", href: "/citizenship", label: "Citizenship" },
+      ]),
+    );
+  });
+
   it("exposes Second Economy as an internal route in primary nav", () => {
     expect(siteNav).toEqual(
       expect.arrayContaining([
