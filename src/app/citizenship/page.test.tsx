@@ -33,6 +33,26 @@ describe("What is Citizenship", () => {
     expect(html).toContain("https://world2.v0peer.org");
   });
 
+  it("previews the brochure in a new tab from the hero", () => {
+    const html = renderToStaticMarkup(<CitizenshipPage />);
+    const links = [...html.matchAll(/<a\b[^>]*>[\s\S]*?<\/a>/g)].map(
+      (match) => match[0],
+    );
+    const openBrochure = links.find((link) => link.includes("Open brochure"));
+    const downloadBrochure = links.find((link) =>
+      link.includes("Download the brochure"),
+    );
+
+    expect(openBrochure).toBeDefined();
+    expect(openBrochure).toContain('href="/v0peer-citizenship.pdf"');
+    expect(openBrochure).toContain('target="_blank"');
+    expect(openBrochure).toContain('rel="noopener noreferrer"');
+    expect(openBrochure).not.toContain("download");
+    expect(html).not.toContain("Open World 1");
+
+    expect(downloadBrochure).toContain("download");
+  });
+
   it("publishes a downloadable brochure pdf", () => {
     const pdf = readFileSync(
       resolve(process.cwd(), "public/v0peer-citizenship.pdf"),
