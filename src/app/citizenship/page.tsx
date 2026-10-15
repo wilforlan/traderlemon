@@ -91,10 +91,12 @@ export default function CitizenshipPage() {
                 Download the brochure
               </a>
               <a
-                href={WORLD_SERVER_URL}
+                href={CITIZENSHIP_BROCHURE_PATH}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="btn-fluid btn-secondary px-5 py-3 text-sm"
               >
-                Open World 1
+                Open brochure
                 <ArrowRight size={16} aria-hidden />
               </a>
             </div>
